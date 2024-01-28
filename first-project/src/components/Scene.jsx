@@ -43,7 +43,7 @@ export default function Scene(){
                 frameloop="demand"
             >
                 <Suspense fallback={ <Loader /> }>
-                
+                    <OrbitControls></OrbitControls>
                     <ScrollControls pages={ 5 } damping={ 1 }>
                         <SheetProvider sheet={ sheet }>
                             <Scene_conf />

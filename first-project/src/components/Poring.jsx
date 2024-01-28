@@ -4,7 +4,7 @@ import { a } from '@react-spring/three';
 import { useFrame, useThree } from "@react-three/fiber"; 
 
 import { initialStatesAnimations, activateAnimation, resumePausedAnimation } from "../extra_functions/handleAnimations";
-import GLtfDir from '../assets/textures/poring.glb';
+import GLtfDir from '../assets/models/poring.glb';
 import Poster from "./Poster";
 
 export default function Poring(...props){

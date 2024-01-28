@@ -6,7 +6,7 @@ import { useFrame } from "@react-three/fiber";
 import { useCurrentSheet } from '@theatre/r3f';
 
 import {initialStatesAnimations, activateAnimation, resumePausedAnimation} from "../extra_functions/handleAnimations";
-import GLtfDir from '../assets/textures/book_anim.glb';
+import GLtfDir from '../assets/models/book_anim.glb';
 
 export default function Book(...props){
     const bookRef = useRef();

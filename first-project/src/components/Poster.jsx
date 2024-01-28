@@ -4,7 +4,7 @@ import { a } from '@react-spring/three';
 import { useFrame } from "@react-three/fiber";
 
 import { initialStatesAnimations, activateAnimation, resumePausedAnimation } from "../extra_functions/handleAnimations";
-import GLtfDir from '../assets/textures/poster.glb';
+import GLtfDir from '../assets/models/poster.glb';
 
 export default function Poster(...props){
     const posterRef = useRef();
