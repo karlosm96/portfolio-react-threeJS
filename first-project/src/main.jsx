@@ -6,8 +6,8 @@ import Home from './components/Home.jsx';
 import studio from '@theatre/studio';
 import extension from '@theatre/r3f/dist/extension'
 
-studio.extend(extension);
-studio.initialize();
+//studio.extend(extension);
+//studio.initialize();
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 

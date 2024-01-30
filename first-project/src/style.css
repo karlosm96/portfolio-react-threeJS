@@ -1,19 +1,154 @@
 * {
     box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #FFF;
   }
   
-  html,
-  body,
-  #root {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    background-image:url('./assets/img/back.jpg');
-    background-size: contain;
+html,
+body{
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-image:url('./assets/img/back.jpg');
+  background-size: contain;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+#root{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+section{
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.about-container{
+  width: 90%;
+  min-height: fit-content;
+  position: absolute;
+  top: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  background-image: url('../src/assets/img/fondo.png');
+  background-size:auto;
+}
+
+.hidden{
+  display: none;
+}
+
+.no-style{
+  list-style-type: none;
+  display: flex;
+}
+
+/*Section resume*/
+.section-title{
+  display: flex;
+  justify-content: center;
+  margin: 1em;
+  max-width: min-content;
+}
+
+.resume-data-container{
+  margin: 2rem 0 2rem 0;
+}
+
+.resume-title{
+  margin-left: 1em;
+  border: 3px solid #FFF;
+  border-radius: 5px;
+  width:fit-content;
+  padding: 0.3em;
+  font-size: 1.5rem;
+}
+
+.resume-item{
+  padding-left: 1em;
+  display: flex;
+  margin: 0.5rem 0 0.5em 0;
+  padding: 0 1.5em 0 1em;
+  justify-content:flex-start; 
+}
+
+.contact-li{
+  padding-left: 2rem;
+}
+
+.contact-name{
+  max-width: 100%;
+}
+
+i{
+  width: 1em;
+  height: 1em;
+  margin-right: 0.5em;
+  align-self: center;
+}
+
+.uni-img{
+  height: fit-content;
+  min-width: 40px;
+  max-width: 5vw;
+  border-radius: 15px;
+  padding: 0.5em;
+  display: flex;
+}
+
+ul{
+  margin: 0.5em 0 0 0;
+  padding: 0;
+}
+
+li{
+  display: flex;
+  flex-wrap: wrap;
+  width: fit-content;
+}
+
+h2{
+  max-width: fit-content;
+}
+
+h4{
+  font-size: 1.1rem;
+  margin-right: 0.5em;
+  max-width: 70%;
+}
+
+h5{
+  font-size: 0.8rem;
+  background: #e4edf9;
+  padding: 0.5em;
+  color: black;
+  border-radius: 5px;
+  width: fit-content;
+  max-height: 4vh;
+}
+
+.resume-p{
+  display: flex;
+  max-width: max-content;
+  margin: 0 0.5em 0 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .section-title{
+    display: none;
   }
-  
-  body {
-    background: #f0f0f0;
-  }
+}

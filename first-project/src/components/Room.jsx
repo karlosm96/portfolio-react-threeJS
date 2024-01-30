@@ -11,6 +11,7 @@ import vidBeach from '../assets/videos/demo.mp3';
 export function Room( {scale, position} ) {
 
   const { nodes, materials } = useGLTF(room)
+  console.log(nodes.top_notebook002.geometry)
   const [ firstVid ] = useState(() =>{
     const video = document.getElementById("demo-video");
     return video;
@@ -58,7 +59,6 @@ export function Room( {scale, position} ) {
         <mesh geometry={nodes.Cube044_1.geometry} material={materials['clic.001']} />
         <mesh geometry={nodes.Cube044_2.geometry} material={materials['verde.brilla']} />
       </group>
-      <mesh geometry={nodes.top_notebook002.geometry} material={nodes.top_notebook002.material} position={[-4.913, 1.786, 4.77]} rotation={[0.001, -1.199, 1.579]} scale={[1.374, 0.03, 2.151]} />
       <group position={[-6.438, 0.206, 6.143]} rotation={[0, 0.377, 0]} scale={[0.114, 0.004, 0.044]}>
         <mesh geometry={nodes.Cube045_1.geometry} material={nodes.Cube045_1.material} />
         <mesh geometry={nodes.Cube045_2.geometry} material={materials['verde.brilla']} />
@@ -656,7 +656,9 @@ export function Room( {scale, position} ) {
       <mesh geometry={nodes.desk.geometry} material={materials.plastic_notebook} position={[20.109, 2.727, -43.51]} scale={[11.644, 0.246, 4.411]} />
       <mesh geometry={nodes.front_glass.geometry} material={materials.Glass} position={[24.658, 3.396, -40.541]} scale={[11.644, 0.246, 4.411]} />
       <mesh geometry={nodes.monitor.geometry} material={materials.plateado} position={[0, 0, -22.474]} />
-      <mesh geometry={nodes.monitor_screen.geometry} material={nodes.monitor_screen.material} position={[0, 0, -22.474]} />
+      <mesh geometry={nodes.monitor_screen.geometry}  position={[0, 0, -22.474]}>
+        <VideoMaterial url={vidBeach} />
+      </mesh>
       <group position={[18.526, 4.695, -43.393]} rotation={[0, -0.01, 0]} scale={[0.307, 0.371, 0.303]}>
         <mesh geometry={nodes.Plane018.geometry} material={materials.plastic_notebook} />
         <mesh geometry={nodes.Plane018_1.geometry} material={materials.blanco} />
@@ -928,6 +930,11 @@ export function Room( {scale, position} ) {
       <mesh geometry={nodes.Text078.geometry} material={materials.text} position={[13.458, 4.813, -43.067]} scale={0.073} />
       <mesh geometry={nodes.Text079.geometry} material={materials.text} position={[13.216, 4.813, -43.067]} scale={0.073} />
       <mesh geometry={nodes.Text080.geometry} material={materials.text} position={[15.356, 4.817, -43.067]} scale={0.073} />
+
+      <mesh geometry={nodes.top_notebook002.geometry} material={nodes.top_notebook002.material} position={[-4.88, 1.786, 4.62]} rotation={[-0.025, -4.338, 1.579]} scale={[1.374, 0.03, 2.151]}>
+        <VideoMaterial url={vidBeach} />
+      </mesh>
+
     </a.group>
     </>
   );
@@ -935,10 +942,8 @@ export function Room( {scale, position} ) {
 
 function VideoMaterial({ url }) {
   const texture = useVideoTexture(url)
-  return(
-    <meshBasicMaterial map={texture} />
-    
-  )
+  texture.flipY = true;
+  return <meshBasicMaterial map={texture} toneMapped={false} />
 }
 
 export default Room;
@@ -954,8 +959,6 @@ const execute = new Promise(function(resolve, reject){
 
 
 
-      <mesh geometry={nodes.top_notebook002.geometry} material={nodes.top_notebook002.material} position={[-4.913, 1.786, 4.77]} rotation={[0.001, -1.199, 1.579]} scale={[1.374, 0.03, 2.151]} >
-        <VideoMaterial url={vidBeach} />
-      </mesh>
-            
+            <mesh geometry={nodes.top_notebook002.geometry} material={nodes.top_notebook002.material} position={[-4.88, 1.786, 4.62]} rotation={[-0.025, -4.338, 1.579]} scale={[1.374, 0.03, 2.151]} >
+
 */

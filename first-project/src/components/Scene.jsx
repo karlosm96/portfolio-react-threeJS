@@ -37,13 +37,13 @@ export default function Scene(){
     const [roomScale, roomPosition] = adjustSceneSize(); 
 
     return(
-        <section className="w-full h-screen relative">
-            <Canvas className='w-full h-screen bg-transparent'
+        <section>
+            <Canvas className="section-canvas"
                 gl={{ preserveDrawingBuffer: true }}
                 frameloop="demand"
             >
                 <Suspense fallback={ <Loader /> }>
-                    <OrbitControls></OrbitControls>
+
                     <ScrollControls pages={ 5 } damping={ 1 }>
                         <SheetProvider sheet={ sheet }>
                             <Scene_conf />
