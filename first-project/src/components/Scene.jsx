@@ -1,14 +1,15 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Suspense } from "react";
 import { getProject, val } from '@theatre/core'
-import { OrbitControls, ScrollControls, Sky, useScroll } from "@react-three/drei";
+import { OrbitControls, ScrollControls, Sky, useHelper, useScroll } from "@react-three/drei";
 import { SheetProvider, PerspectiveCamera, useCurrentSheet } from '@theatre/r3f';
 
 import Room from './Room';
 import Loader from "./Loader";
 import '../styles/home.css';
 import cameraMoveState from '../assets/camera/camera_mov.json';
+import { DirectionalLight, DirectionalLightHelper } from "three";
 
 export default function Scene(){
     const sheet = getProject('preliminar name', { state: cameraMoveState }).sheet('Scene');
@@ -43,7 +44,7 @@ export default function Scene(){
                 frameloop="demand"
             >
                 <Suspense fallback={ <Loader /> }>
-
+                    
                     <ScrollControls pages={ 5 } damping={ 1 }>
                         <SheetProvider sheet={ sheet }>
                             <Scene_conf />
@@ -68,13 +69,12 @@ function Scene_conf(){
     return(
         <>
             <PerspectiveCamera theatreKey='Camera' makeDefault position={ [0, 0, 0] } fov={ 90 } near={ 0.1 } far={ 70 } />
-            <directionalLight position={ [-3, -1, 1] } intensity={ 3 } color={ '#fff8b6' } />
-            <directionalLight position={ [-3, -1, 1] } intensity={ 1 } />
-            <directionalLight position={ [1, -2, -2] } intensity={ 3 } color={ '#ffe4a3' }/>
-            <directionalLight position={ [1, -2, -2] } intensity={ 1 } />
-            <directionalLight position={ [1, 1, 1] } intensity={ 3 } color={ '#FAD6A5' }/>
-            <ambientLight intensity={ 1 } color={ '#ff8d71' }/>
-            <hemisphereLight skyColor="#ff707e" groundColor="#000000" intensity={ 1 } />
+            <directionalLight position={ [-50, 25, -100] } intensity={ 2 } color={ '#fff8b6' } />
+            <directionalLight position={ [-50, 0, -100] } intensity={ 2 } color={ '#ffe4a3' }/>
+            <directionalLight position={ [-50, 12, -100] } intensity={ 2 } color={ '#FAD6A5' }/>
+            <directionalLight position={ [0, 12, 100] } intensity={ 2 } color={ '#FAD6A5' }/>
+            <directionalLight position={ [0, 12, 100] } intensity={ 0.5 } color={ '#FD5E53' }/>
+            <ambientLight intensity={1}/>
             <pointLight position={ [0, 1, -0.4] } intensity={ 3 } />
         </>
     )
@@ -90,4 +90,15 @@ function Scene_conf(){
             <directionalLight position={ [1, 1, 1] } intensity={ 3 } color={ '#FAD6A5' }/>
             <ambientLight intensity={ 1 } color={ '#ff8d71' }/>
             <hemisphereLight skyColor="#ff707e" groundColor="#000000" intensity={ 1 } />
+
+
+
+            <ambientLight intensity={ 1 } color={ '#ff8d71' }/>
+            <ambientLight intensity={ 1 } color={ '#ff8d71' }/>
+            <pointLight position={ [0, 1, -0.4] } intensity={ 3 } />
+
+
+
+
+            <pointLight position={ [24.84, 3.65, -41.39] } intensity={ 50 } color={ '#00ff7f' }/>
 */

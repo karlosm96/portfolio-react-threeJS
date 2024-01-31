@@ -10,6 +10,128 @@ export function Model(props) {
   const { nodes, materials } = useGLTF('/room.glb')
   return (
     <group {...props} dispose={null}>
+      <group position={[19.314, 11.224, -44.549]} rotation={[-Math.PI / 2, 0, -1.57]} scale={1.462}>
+        <group rotation={[Math.PI / 2, 0, 0]}>
+          <group position={[-1.037, -1.709, -7.388]} rotation={[-Math.PI, 0, 0]} scale={[-0.003, -0.546, -0.109]}>
+            <mesh geometry={nodes.Object_86.geometry} material={materials['Material.097']} position={[-0.001, 0, 0]} />
+          </group>
+          <group position={[-1.109, -1.709, -7.388]} rotation={[-Math.PI, 0, 0]} scale={[-0.012, -0.519, -0.114]}>
+            <mesh geometry={nodes.Object_92.geometry} material={materials['Material.063_5']} position={[-0.001, 0, 0]} />
+          </group>
+          <group position={[-1.117, -1.709, -7.388]} rotation={[-Math.PI, 0, 0]} scale={[-0.003, -0.546, -0.109]}>
+            <mesh geometry={nodes.Object_94.geometry} material={materials['Material.097']} position={[-0.001, 0, 0]} />
+          </group>
+          <mesh geometry={nodes.Object_20.geometry} material={materials['rgb-hdd-cover-aorus-v1']} position={[0.983, -1.502, -6.487]} rotation={[Math.PI / 2, 0, Math.PI / 2]} scale={1.269} />
+          <mesh geometry={nodes.Object_26.geometry} material={materials['rgb-hdd-cover-aorus-v1']} position={[1.224, -2.795, -6.487]} rotation={[Math.PI / 2, 0, -Math.PI / 2]} scale={1.269} />
+          <mesh geometry={nodes.Object_28.geometry} material={materials['rgb-hdd-cover-aorus-v1']} position={[0.983, -2.795, -6.487]} rotation={[Math.PI / 2, 0, Math.PI / 2]} scale={1.269} />
+          <mesh geometry={nodes.Object_32.geometry} material={materials['rgb-hdd-cover-aorus-v1']} position={[-2.644, -1.456, -6.245]} rotation={[Math.PI / 2, 0, -Math.PI / 2]} scale={1.269} />
+          <mesh geometry={nodes.Object_34.geometry} material={materials['rgb-hdd-cover-aorus-v1']} position={[-2.885, -1.456, -6.245]} rotation={[Math.PI / 2, 0, Math.PI / 2]} scale={1.269} />
+          <mesh geometry={nodes.Object_38.geometry} material={materials['rgb-hdd-cover-aorus-v1']} position={[-1.828, -0.973, -6.485]} rotation={[-Math.PI, -1.571, 0]} scale={1.29} />
+          <mesh geometry={nodes.Object_40.geometry} material={materials['rgb-hdd-cover-aorus-v1']} position={[-1.828, -0.728, -6.485]} rotation={[-Math.PI, -1.571, 0]} scale={1.29} />
+          <mesh geometry={nodes.Object_48.geometry} material={materials['rgb-hdd-cover-aorus-v1']} position={[-0.342, -0.973, -6.485]} rotation={[-Math.PI, -1.571, 0]} scale={1.29} />
+          <mesh geometry={nodes.Object_50.geometry} material={materials['rgb-hdd-cover-aorus-v1']} position={[-0.342, -0.728, -6.485]} rotation={[-Math.PI, -1.571, 0]} scale={1.29} />
+          <mesh geometry={nodes.Object_18.geometry} material={materials['rgb-hdd-cover-aorus-v1']} position={[1.224, -1.502, -6.487]} rotation={[Math.PI / 2, 0, -Math.PI / 2]} scale={1.269} />
+          <mesh geometry={nodes.Object_192.geometry} material={materials['Material.063_18']} position={[-1.958, -2.753, -6.024]} rotation={[Math.PI / 2, 0, 0]} scale={[0.101, 0.106, 0.101]} />
+          <mesh geometry={nodes.Object_268.geometry} material={materials.text} position={[1.201, -1.273, -5.631]} rotation={[0, 0, -Math.PI / 2]} scale={0.067} />
+          <mesh geometry={nodes.Object_220.geometry} material={materials['Material.085']} position={[-0.499, -3.494, -6.021]} rotation={[Math.PI, 0, 1.234]} scale={1.17} />
+          <mesh geometry={nodes.Object_226.geometry} material={materials['Material.087']} position={[-0.192, -2.729, -7.478]} rotation={[Math.PI, 0, 1.234]} scale={1.17} />
+          <mesh geometry={nodes.Object_232.geometry} material={materials['Material.096']} position={[1.03, -2.092, -7.446]} rotation={[-Math.PI / 2, 1.571, 0]} scale={1.17} />
+          <mesh geometry={nodes.Object_6.geometry} material={materials['Material.063_0']} position={[-0.829, -2.542, -6.467]} scale={[2.029, 1.841, 1.052]} />
+          <mesh geometry={nodes.Object_8.geometry} material={materials['Material.063_0']} position={[-0.829, -2.542, -6.467]} scale={[2.029, 1.841, 1.052]} />
+          <mesh geometry={nodes.Object_10.geometry} material={materials['Material.063_0']} position={[1.144, -4.49, -6.466]} rotation={[0, 0, -2.904]} scale={[-0.07, -0.142, -1.034]} />
+          <mesh geometry={nodes.Object_12.geometry} material={materials['Material.063_0']} position={[-2.789, -4.49, -6.466]} rotation={[0, 0, 3.006]} scale={[-0.07, -0.142, -1.034]} />
+          <mesh geometry={nodes.Object_22.geometry} material={materials['Material.063_1']} position={[-1.759, -2.257, -7.486]} rotation={[0, 0, -Math.PI]} scale={[-1.045, -1.245, -0.008]} />
+          <mesh geometry={nodes.Object_24.geometry} material={materials['Material.017']} position={[1.103, -2.798, -6.489]} rotation={[0, 0, -Math.PI / 2]} scale={[0.593, 0.117, 0.593]} />
+          <mesh geometry={nodes.Object_30.geometry} material={materials['Material.017']} position={[-2.764, -1.459, -6.247]} rotation={[0, 0, -Math.PI / 2]} scale={[0.593, 0.117, 0.593]} />
+          <mesh geometry={nodes.Object_16.geometry} material={materials['Material.017']} position={[1.103, -1.505, -6.489]} rotation={[0, 0, -Math.PI / 2]} scale={[0.593, 0.117, 0.593]} />
+          <mesh geometry={nodes.Object_36.geometry} material={materials['Material.017']} position={[-1.831, -0.85, -6.487]} rotation={[0, 0, -Math.PI]} scale={[0.603, 0.119, 0.603]} />
+          <mesh geometry={nodes.Object_42.geometry} material={materials['Material.063_2']} position={[-0.948, -3.956, -6.58]} scale={[1.88, 0.401, 0.865]} />
+          <mesh geometry={nodes.Object_44.geometry} material={materials['Material.063_0']} position={[-1.088, -0.827, -6.482]} scale={[0.084, 0.126, 0.673]} />
+          <mesh geometry={nodes.Object_46.geometry} material={materials['Material.017']} position={[-0.345, -0.85, -6.487]} rotation={[0, 0, -Math.PI]} scale={[0.603, 0.119, 0.603]} />
+          <mesh geometry={nodes.Object_58.geometry} material={materials['Material.063_0']} position={[1.273, -2.205, -6.485]} rotation={[0, 0, -Math.PI]} scale={[-0.14, -1.378, -0.693]} />
+          <mesh geometry={nodes.Object_60.geometry} material={materials['Material.063_0']} position={[-2.925, -1.466, -6.249]} scale={[0.075, 0.649, 0.649]} />
+          <mesh geometry={nodes.Object_64.geometry} material={materials['Material.023']} position={[-1.759, -2.257, -7.486]} rotation={[0, 0, -Math.PI]} scale={[-1.045, -1.245, -0.008]} />
+          <mesh geometry={nodes.Object_66.geometry} material={materials['Material.024']} position={[-1.759, -2.257, -7.486]} rotation={[0, 0, -Math.PI]} scale={[-1.045, -1.245, -0.008]} />
+          <mesh geometry={nodes.Object_74.geometry} material={materials['rgb-hdd-cover-aorus-v1_1']} position={[-0.952, -1.709, -7.37]} rotation={[-Math.PI, 0, 0]} scale={[-0.018, -0.518, -0.128]} />
+          <mesh geometry={nodes.Object_76.geometry} material={materials['Material.063_5']} position={[-0.944, -1.709, -7.388]} rotation={[-Math.PI, 0, 0]} scale={[-0.012, -0.519, -0.114]} />
+          <mesh geometry={nodes.Object_78.geometry} material={materials['Material.097']} position={[-0.952, -1.709, -7.388]} rotation={[-Math.PI, 0, 0]} scale={[-0.003, -0.546, -0.109]} />
+          <mesh geometry={nodes.Object_80.geometry} material={materials['Material.063_5']} position={[-0.959, -1.709, -7.613]} rotation={[0, 0, -Math.PI]} scale={[-0.012, -0.519, -0.114]} />
+          <mesh geometry={nodes.Object_82.geometry} material={materials['rgb-hdd-cover-aorus-v1_1']} position={[-1.037, -1.709, -7.37]} rotation={[-Math.PI, 0, 0]} scale={[-0.018, -0.518, -0.128]} />
+          <mesh geometry={nodes.Object_84.geometry} material={materials['Material.063_5']} position={[-1.029, -1.709, -7.388]} rotation={[-Math.PI, 0, 0]} scale={[-0.012, -0.519, -0.114]} />
+          <mesh geometry={nodes.Object_88.geometry} material={materials['Material.063_5']} position={[-1.044, -1.709, -7.613]} rotation={[0, 0, -Math.PI]} scale={[-0.012, -0.519, -0.114]} />
+          <mesh geometry={nodes.Object_90.geometry} material={materials['rgb-hdd-cover-aorus-v1_1']} position={[-1.117, -1.709, -7.37]} rotation={[-Math.PI, 0, 0]} scale={[-0.018, -0.518, -0.128]} />
+          <mesh geometry={nodes.Object_96.geometry} material={materials['Material.063_5']} position={[-1.124, -1.709, -7.613]} rotation={[0, 0, -Math.PI]} scale={[-0.012, -0.519, -0.114]} />
+          <mesh geometry={nodes.Object_98.geometry} material={materials['rgb-hdd-cover-aorus-v1_1']} position={[-1.199, -1.709, -7.37]} rotation={[-Math.PI, 0, 0]} scale={[-0.018, -0.518, -0.128]} />
+          <mesh geometry={nodes.Object_100.geometry} material={materials['Material.063_5']} position={[-1.19, -1.709, -7.388]} rotation={[-Math.PI, 0, 0]} scale={[-0.012, -0.519, -0.114]} />
+          <mesh geometry={nodes.Object_102.geometry} material={materials['Material.097']} position={[-1.198, -1.709, -7.388]} rotation={[-Math.PI, 0, 0]} scale={[-0.003, -0.546, -0.109]} />
+          <mesh geometry={nodes.Object_104.geometry} material={materials['Material.063_5']} position={[-1.205, -1.709, -7.613]} rotation={[0, 0, -Math.PI]} scale={[-0.012, -0.519, -0.114]} />
+          <mesh geometry={nodes.Object_108.geometry} material={materials['Material.097']} position={[-2.216, -4.014, -0.935]} scale={[0.521, 0.633, 0.31]} />
+          <mesh geometry={nodes.Object_120.geometry} material={materials['Material.097']} position={[-2.216, -4.014, 6.939]} scale={[0.521, 0.633, 0.31]} />
+          <mesh geometry={nodes.Object_110.geometry} material={materials['Material.063_6']} position={[-2.306, -3.95, -5.818]} scale={[0.415, 0.241, 0.06]} />
+          <mesh geometry={nodes.Object_142.geometry} material={materials['Material.033']} position={[-2.025, -1.738, -6.636]} scale={[0.109, 0.496, 0.496]} />
+          <mesh geometry={nodes.Object_144.geometry} material={materials['Material.033']} position={[-1.399, -1.738, -6.636]} scale={[0.109, 0.496, 0.496]} />
+          <mesh geometry={nodes.Object_146.geometry} material={materials['Material.063_10']} position={[-1.711, -1.741, -6.636]} scale={[0.204, 0.469, 0.461]} />
+          <mesh geometry={nodes.Object_148.geometry} material={materials['Material.063_11']} position={[-1.711, -1.741, -6.636]} scale={[0.204, 0.469, 0.461]} />
+          <mesh geometry={nodes.Object_150.geometry} material={materials['Material.063_11']} position={[-1.711, -1.741, -6.636]} scale={[0.204, 0.469, 0.461]} />
+          <mesh geometry={nodes.Object_152.geometry} material={materials['Material.042']} position={[-1.711, -1.741, -6.636]} scale={[0.204, 0.469, 0.461]} />
+          <mesh geometry={nodes.Object_162.geometry} material={materials['Material.097']} position={[1.153, -3.904, -6.489]} scale={[0.067, 0.338, 0.541]} />
+          <mesh geometry={nodes.Object_166.geometry} material={materials['Material.048']} position={[-1.759, -2.257, -7.486]} rotation={[0, 0, -Math.PI]} scale={[-1.045, -1.245, -0.008]} />
+          <mesh geometry={nodes.Object_168.geometry} material={materials['Material.049']} position={[-1.759, -2.257, -7.486]} rotation={[0, 0, -Math.PI]} scale={[-1.045, -1.245, -0.008]} />
+          <mesh geometry={nodes.Object_170.geometry} material={materials['Material.054']} position={[-1.254, -2.714, -6.664]} scale={[1.558, 0.154, 0.638]} />
+          <mesh geometry={nodes.Object_172.geometry} material={materials['Material.061']} position={[-1.312, -2.538, -6.664]} scale={[1.498, 0.148, 0.613]} />
+          <mesh geometry={nodes.Object_184.geometry} material={materials['Material.063_16']} position={[-1.312, -2.538, -6.664]} scale={[1.498, 0.148, 0.613]} />
+          <mesh geometry={nodes.Object_190.geometry} material={materials['Material.063_17']} position={[-1.258, -2.379, -6.663]} scale={[1.559, 0.009, 0.638]} />
+          <mesh geometry={nodes.Object_186.geometry} material={materials['Material.058']} position={[-1.312, -2.538, -6.664]} scale={[1.498, 0.148, 0.613]} />
+          <mesh geometry={nodes.Object_188.geometry} material={materials['Material.062']} position={[-1.272, -1.787, -6.035]} rotation={[Math.PI / 2, 0, 0]} scale={[1.559, 0.01, 0.623]} />
+          <mesh geometry={nodes.Object_194.geometry} material={materials['Material.097']} position={[-1.254, -2.714, -6.664]} scale={[1.558, 0.154, 0.638]} />
+          <mesh geometry={nodes.Object_196.geometry} material={materials['Material.097']} position={[-1.759, -2.257, -7.486]} rotation={[0, 0, -Math.PI]} scale={[-1.045, -1.245, -0.008]} />
+          <mesh geometry={nodes.Object_260.geometry} material={materials['Material.097']} position={[-2.945, -1.833, -7.392]} scale={[0.09, 0.061, 0.027]} />
+          <mesh geometry={nodes.Object_262.geometry} material={materials['Material.097']} position={[-2.945, -1.833, -7.322]} scale={[0.09, 0.061, 0.027]} />
+          <mesh geometry={nodes.Object_222.geometry} material={materials['Material.097']} position={[-0.911, -2.46, -6.013]} scale={[0.066, 0.05, 0.063]} />
+          <mesh geometry={nodes.Object_224.geometry} material={materials['Material.063_21']} position={[-2.842, -2.591, -6.675]} scale={[0.014, 0.208, 0.613]} />
+          <mesh geometry={nodes.Object_228.geometry} material={materials['Material.097']} position={[-0.779, -1.761, -7.446]} scale={[0.033, 0.203, 0.057]} />
+          <mesh geometry={nodes.Object_230.geometry} material={materials['Material.097']} position={[0.999, -0.967, -7.446]} scale={[0.033, 0.141, 0.057]} />
+          <mesh geometry={nodes.Object_234.geometry} material={materials['Material.097']} position={[-2.98, -2.742, -6.288]} scale={[0.188, 0.051, 0.107]} />
+          <mesh geometry={nodes.Object_264.geometry} material={materials['Material.097']} position={[-2.945, -1.673, -7.32]} scale={[0.09, 0.061, 0.027]} />
+          <mesh geometry={nodes.Object_116.geometry} material={materials.text} position={[-1.683, -3.705, -0.941]} rotation={[0, 0, -1.554]} scale={[0.206, 0.027, 0.206]} />
+          <mesh geometry={nodes.Object_118.geometry} material={materials.text} position={[-1.652, -4.169, -0.941]} rotation={[0, 0, -1.536]} scale={[0.109, 0.014, 0.109]} />
+          <mesh geometry={nodes.Object_122.geometry} material={materials.text} position={[-1.683, -3.705, 6.933]} rotation={[0, 0, -1.554]} scale={[0.206, 0.027, 0.206]} />
+          <mesh geometry={nodes.Object_124.geometry} material={materials.text} position={[-1.652, -4.169, 6.933]} rotation={[0, 0, -1.536]} scale={[0.109, 0.014, 0.109]} />
+          <mesh geometry={nodes.Object_154.geometry} material={materials['rgb-hdd-cover-aorus-v1_5']} position={[-1.709, -1.736, -6.646]} rotation={[0, 0, -Math.PI / 2]} scale={[0.383, 0.4, 0.383]} />
+          <mesh geometry={nodes.Object_174.geometry} material={materials['Material.063_13']} position={[-2.274, -2.719, -6.659]} scale={[0.425, 0.124, 0.447]} />
+          <mesh geometry={nodes.Object_176.geometry} material={materials['Material.063_14']} position={[-1.28, -2.719, -6.659]} scale={[0.425, 0.124, 0.447]} />
+          <mesh geometry={nodes.Object_178.geometry} material={materials['Material.063_13']} position={[-0.266, -2.719, -6.659]} scale={[0.425, 0.124, 0.447]} />
+          <mesh geometry={nodes.Object_156.geometry} material={materials['Material.045']} position={[-1.859, -2.042, -7.263]} rotation={[-1.097, 0, Math.PI]} scale={[0.024, 0.199, 0.024]} />
+          <mesh geometry={nodes.Object_248.geometry} material={materials['Material.094']} position={[1.147, -1.273, -5.63]} rotation={[0, 0, -Math.PI / 2]} scale={[0.115, 0.057, 0.115]} />
+          <mesh geometry={nodes.Object_250.geometry} material={materials['Material.096']} position={[1.165, -1.598, -5.63]} rotation={[0, 0, -Math.PI / 2]} scale={[0.077, 0.038, 0.077]} />
+          <mesh geometry={nodes.Object_252.geometry} material={materials['Material.096']} position={[1.165, -1.904, -5.63]} rotation={[0, 0, -Math.PI / 2]} scale={[0.078, 0.039, 0.078]} />
+          <mesh geometry={nodes.Object_266.geometry} material={materials['Material.097']} position={[-2.908, -1.969, -7.263]} rotation={[0, 0, -Math.PI / 2]} scale={[0.036, 0.064, 0.036]} />
+          <mesh geometry={nodes.Object_14.geometry} material={materials['Material.097']} position={[1.044, -4.279, -5.405]} rotation={[Math.PI / 2, 0, 0]} scale={[0.071, 0.027, 0.073]} />
+          <mesh geometry={nodes.Object_182.geometry} material={materials['Material.056']} position={[-2.506, -2.483, -6.025]} rotation={[Math.PI / 2, 0, 0]} scale={[0.121, 0.128, 0.121]} />
+          <mesh geometry={nodes.Object_56.geometry} material={materials['Material.063_3']} position={[-2.862, -1.547, -7.271]} rotation={[-Math.PI, 0, Math.PI / 2]} scale={[0.31, 0.372, 0.361]} />
+          <mesh geometry={nodes.Object_114.geometry} material={materials['rgb-hdd-cover-aorus-v1_3']} position={[1.202, -3.9, -6.486]} rotation={[Math.PI / 2, 0, -Math.PI / 2]} scale={0.461} />
+          <mesh geometry={nodes.Object_70.geometry} material={materials['Material.063_4']} position={[-1.862, -0.703, -6.472]} rotation={[-Math.PI, 1.571, 0]} scale={[1.17, 1.17, 1.564]} />
+          <mesh geometry={nodes.Object_72.geometry} material={materials['Material.063_4']} position={[-2.993, -1.469, -6.252]} rotation={[Math.PI / 2, 0, Math.PI / 2]} scale={[0.931, 0.931, 1.244]} />
+          <mesh geometry={nodes.Object_106.geometry} material={materials['Material.063_4']} position={[-2.842, -2.749, -6.529]} rotation={[Math.PI / 2, 0, Math.PI / 2]} scale={[1.276, 0.931, 1.244]} />
+          <mesh geometry={nodes.Object_158.geometry} material={materials['Material.063_4']} position={[-2.842, -2.297, -6.529]} rotation={[Math.PI / 2, 0, Math.PI / 2]} scale={[1.276, 0.931, 1.244]} />
+          <mesh geometry={nodes.Object_68.geometry} material={materials['Material.063_4']} position={[-0.319, -0.703, -6.472]} rotation={[0, 0, Math.PI]} scale={[1.17, 1.17, 1.564]} />
+          <mesh geometry={nodes.Object_62.geometry} material={materials['rgb-hdd-cover-aorus-v1_0']} position={[-2.58, -1.513, -7.288]} rotation={[Math.PI / 2, 0.651, 0]} scale={0.074} />
+          <mesh geometry={nodes.Object_126.geometry} material={materials['Material.063_7']} position={[0.183, -4.055, -5.711]} rotation={[Math.PI / 2, 0, 0]} scale={0.529} />
+          <mesh geometry={nodes.Object_128.geometry} material={materials['Material.063_8']} position={[-2.868, -3.966, -6.456]} rotation={[Math.PI / 2, 0, -Math.PI / 2]} scale={0.696} />
+          <mesh geometry={nodes.Object_112.geometry} material={materials['rgb-hdd-cover-aorus-v1_2']} position={[-0.918, -3.906, -5.708]} rotation={[Math.PI / 2, 0, 0]} scale={0.432} />
+          <mesh geometry={nodes.Object_54.geometry} material={materials['Material.097']} position={[-3.071, 0.477, -7.473]} rotation={[-0.049, 0, 0]} scale={0.057} />
+          <mesh geometry={nodes.Object_52.geometry} material={materials['Material.097']} position={[-3.071, 0.477, -7.1]} rotation={[0.056, 0, 0]} scale={0.057} />
+          <mesh geometry={nodes.Object_164.geometry} material={materials['rgb-hdd-cover-aorus-v1_6']} position={[-1.179, -3.115, -7.42]} rotation={[Math.PI / 2, 0, 0]} scale={0.412} />
+          <mesh geometry={nodes.Object_254.geometry} material={materials['Material.097']} position={[1.2, -2.51, -5.552]} rotation={[0, 0, -Math.PI / 2]} scale={[0.121, 0.114, 0.098]} />
+          <mesh geometry={nodes.Object_160.geometry} material={materials['Material.063_12']} position={[-1.506, -1.952, -6.14]} rotation={[Math.PI / 2, 1.571, 0]} scale={0.028} />
+          <mesh geometry={nodes.Object_138.geometry} material={materials['Material.032']} position={[0.994, -0.706, -7.286]} scale={0.039} />
+          <mesh geometry={nodes.Object_136.geometry} material={materials['Material.013']} position={[0.994, -0.706, -7.09]} scale={0.039} />
+          <mesh geometry={nodes.Object_132.geometry} material={materials['Material.063_9']} position={[1, -0.701, -6.084]} rotation={[0, 1.571, 0]} scale={0.086} />
+          <mesh geometry={nodes.Object_134.geometry} material={materials['Material.063_9']} position={[1, -0.701, -6.454]} rotation={[0, 1.571, 0]} scale={0.086} />
+          <mesh geometry={nodes.Object_140.geometry} material={materials['Material.063_9']} position={[1, -0.701, -6.832]} rotation={[0, 1.571, 0]} scale={0.086} />
+          <mesh geometry={nodes.Object_130.geometry} material={materials['Material.063_9']} position={[1, -0.701, -5.718]} rotation={[0, 1.571, 0]} scale={0.086} />
+        </group>
+      </group>
       <mesh geometry={nodes.neuro004.geometry} material={materials['neuro_images.001']} position={[-8.812, 0.24, -0.511]} rotation={[0.191, 0.065, 0.371]} />
       <mesh geometry={nodes.neuro005.geometry} material={materials['carlson.001']} position={[-7.114, 0.173, -0.472]} rotation={[0, 0.445, 0]} />
       <mesh geometry={nodes.neuro006.geometry} material={materials['neuro_cog.001']} position={[-6.288, 0.645, -1.774]} rotation={[-0.172, 0.503, -0.233]} />
@@ -20,9 +142,9 @@ export function Model(props) {
       <mesh geometry={nodes.psico062.geometry} material={materials['psicofarmaco.001']} position={[-12.051, 1.029, 1.659]} rotation={[0, -0.228, 0]} scale={[1.199, 0.891, 1.199]} />
       <mesh geometry={nodes.blender002.geometry} material={materials['blender__book_front.001']} position={[-8.341, 0.132, 7.474]} rotation={[0, 0.034, 0]} scale={[1.154, 0.648, 1.154]} />
       <mesh geometry={nodes.psico063.geometry} material={materials['neuro_test.001']} position={[-9.232, 0.184, 3.212]} rotation={[0, -0.193, 0]} scale={[1.199, 0.891, 1.199]} />
-      <mesh geometry={nodes.program004.geometry} material={materials['clean_code.001']} position={[25.868, 5.878, -46.795]} rotation={[Math.PI / 2, -0.443, 0]} scale={[1.299, 0.958, 1.299]} />
-      <mesh geometry={nodes.program005.geometry} material={materials['react.001']} position={[26.244, 4.727, -43.873]} rotation={[0, -0.808, 0]} scale={[1.299, 0.958, 1.299]} />
-      <mesh geometry={nodes.program006.geometry} material={materials['javascript.001']} position={[23.722, 5.878, -46.709]} rotation={[1.683, -0.429, 0.265]} scale={[1.299, 0.958, 1.262]} />
+      <mesh geometry={nodes.program004.geometry} material={materials['clean_code.001']} position={[24.196, 5.878, -46.795]} rotation={[Math.PI / 2, -0.443, 0]} scale={[1.299, 0.958, 1.299]} />
+      <mesh geometry={nodes.program005.geometry} material={materials['react.001']} position={[24.572, 4.727, -43.873]} rotation={[0, -0.808, 0]} scale={[1.299, 0.958, 1.299]} />
+      <mesh geometry={nodes.program006.geometry} material={materials['javascript.001']} position={[22.05, 5.878, -46.709]} rotation={[1.683, -0.429, 0.265]} scale={[1.299, 0.958, 1.262]} />
       <mesh geometry={nodes.table_base001.geometry} material={materials['wood_floor.001']} position={[-1.988, -2.646, 3.052]} rotation={[0, 1.562, 0]} scale={[-6.288, -6.876, -6.288]} />
       <mesh geometry={nodes.table_main002.geometry} material={materials['ground.003']} position={[8.004, -0.736, 3.168]} rotation={[0, 1.562, 0]} scale={[5.697, 0.573, 1]} />
       <mesh geometry={nodes.table_main003.geometry} material={materials['ground.003']} position={[-12.082, -0.736, 2.984]} rotation={[0, 1.562, -Math.PI]} scale={[-5.697, -0.573, -1]} />
@@ -45,7 +167,7 @@ export function Model(props) {
         <mesh geometry={nodes.Cube044_1.geometry} material={materials['clic.001']} />
         <mesh geometry={nodes.Cube044_2.geometry} material={materials['verde.brilla']} />
       </group>
-      <mesh geometry={nodes.top_notebook002.geometry} material={nodes.top_notebook002.material} position={[-4.913, 1.786, 4.77]} rotation={[0.001, -1.199, 1.579]} scale={[1.374, 0.03, 2.151]} />
+      <mesh geometry={nodes.top_notebook002.geometry} material={nodes.top_notebook002.material} position={[-4.913, 1.786, 4.77]} rotation={[3.141, 1.199, -1.563]} scale={[-1.374, -0.03, -2.151]} />
       <group position={[-6.438, 0.206, 6.143]} rotation={[0, 0.377, 0]} scale={[0.114, 0.004, 0.044]}>
         <mesh geometry={nodes.Cube045_1.geometry} material={nodes.Cube045_1.material} />
         <mesh geometry={nodes.Cube045_2.geometry} material={materials['verde.brilla']} />
@@ -519,33 +641,39 @@ export function Model(props) {
       <mesh geometry={nodes.wall.geometry} material={materials.wall} position={[39.694, -4.173, -12.167]} scale={[0.901, 0.901, 38.811]} />
       <mesh geometry={nodes.windows.geometry} material={materials.Glass} position={[-28.934, 8.758, -12.167]} rotation={[-Math.PI, 0, 0]} scale={[0.901, 0.901, 38.811]} />
       <mesh geometry={nodes.cristal001.geometry} material={materials.Glass} position={[-2.033, 0.783, 2.56]} rotation={[0, 1.562, 0]} scale={[6.088, 0.038, 6.088]} />
-      <mesh geometry={nodes.Circle001.geometry} material={materials.react_stamp} position={[-7.952, 12.326, -48.621]} rotation={[1.56, 0, 0]} scale={0.245} />
-      <mesh geometry={nodes.Circle002.geometry} material={materials.node} position={[-8.465, 11.86, -48.616]} rotation={[1.56, 0, 0]} scale={0.245} />
-      <mesh geometry={nodes.Circle003.geometry} material={materials.html} position={[-6.777, 12.335, -48.621]} rotation={[1.56, 0, 0]} scale={0.245} />
-      <mesh geometry={nodes.Circle004.geometry} material={materials.css} position={[-6.203, 11.848, -48.616]} rotation={[1.56, 0, 0]} scale={0.245} />
-      <mesh geometry={nodes.Circle005.geometry} material={materials.mongoDB} position={[-7.371, 11.839, -48.615]} rotation={[1.56, 0, 0]} scale={0.329} />
-      <mesh geometry={nodes.Circle007.geometry} material={materials.stampo_python} position={[0.101, 12.079, -48.618]} rotation={[1.56, 0, 0]} scale={0.406} />
-      <mesh geometry={nodes.Plane021.geometry} material={materials.blanco} position={[-7.385, 13.04, -48.633]} rotation={[1.56, 0, 0]} scale={1.712} />
-      <mesh geometry={nodes.Plane022.geometry} material={materials.miDulce} position={[-7.384, 13.574, -48.633]} rotation={[1.56, 0, 0]} scale={[1.329, 0.953, 0.84]} />
-      <mesh geometry={nodes.Plane023.geometry} material={materials.border_card} position={[-7.385, 13.04, -48.631]} rotation={[1.56, 0, 0]} scale={1.712} />
-      <mesh geometry={nodes.Plane028.geometry} material={materials.blanco} position={[1.08, 13.04, -48.633]} rotation={[1.56, 0, 0]} scale={1.712} />
-      <mesh geometry={nodes.Plane029.geometry} material={materials.sort_algo} position={[1.08, 13.574, -48.633]} rotation={[1.56, 0, 0]} scale={[1.329, 0.953, 0.84]} />
-      <mesh geometry={nodes.Plane030.geometry} material={materials.border_card} position={[1.08, 13.04, -48.631]} rotation={[1.56, 0, 0]} scale={1.712} />
-      <mesh geometry={nodes.Plane031.geometry} material={nodes.Plane031.material} position={[1.247, 12.103, -48.617]} rotation={[1.56, 0, 0]} scale={[0.707, 0.279, 0.279]} />
-      <mesh geometry={nodes.Circle008.geometry} material={materials.stampo_python} position={[-4.046, 12.079, -48.618]} rotation={[1.56, 0, 0]} scale={0.406} />
-      <mesh geometry={nodes.Plane020.geometry} material={materials.blanco} position={[-3.067, 13.04, -48.633]} rotation={[1.56, 0, 0]} scale={1.712} />
-      <mesh geometry={nodes.Plane024.geometry} material={materials.game_of_life} position={[-3.067, 13.574, -48.633]} rotation={[1.56, 0, 0]} scale={[1.329, 0.953, 0.84]} />
-      <mesh geometry={nodes.Plane025.geometry} material={materials.border_card} position={[-3.067, 13.04, -48.631]} rotation={[1.56, 0, 0]} scale={1.712} />
-      <mesh geometry={nodes.Plane026.geometry} material={nodes.Plane026.material} position={[-2.9, 12.103, -48.617]} rotation={[1.56, 0, 0]} scale={[0.707, 0.279, 0.279]} />
-      <mesh geometry={nodes.Cube001.geometry} material={materials.blanco} position={[5.439, 23.029, -12.409]} scale={[33.913, 0.569, 38.904]} />
+      <mesh geometry={nodes.roof.geometry} material={materials.blanco} position={[5.439, 23.029, -12.409]} scale={[33.913, 0.569, 38.904]} />
+      <group position={[-7.39, 14.587, -48.526]} rotation={[1.566, 0, 0]} scale={0.929}>
+        <mesh geometry={nodes.Cylinder071.geometry} material={materials.pin} />
+        <mesh geometry={nodes.Cylinder071_1.geometry} material={materials.react_stamp} />
+        <mesh geometry={nodes.Cylinder071_2.geometry} material={materials.node} />
+        <mesh geometry={nodes.Cylinder071_3.geometry} material={materials.html} />
+        <mesh geometry={nodes.Cylinder071_4.geometry} material={materials.css} />
+        <mesh geometry={nodes.Cylinder071_5.geometry} material={materials.mongoDB} />
+        <mesh geometry={nodes.Cylinder071_6.geometry} material={materials.miDulce} />
+        <mesh geometry={nodes.Cylinder071_7.geometry} material={materials.border_card} />
+        <mesh geometry={nodes.Cylinder071_8.geometry} material={materials.blanco} />
+      </group>
+      <group position={[-3.054, 14.587, -48.526]} rotation={[1.566, 0, 0]} scale={0.929}>
+        <mesh geometry={nodes.Cylinder073.geometry} material={materials.pin} />
+        <mesh geometry={nodes.Cylinder073_1.geometry} material={materials.stampo_python} />
+        <mesh geometry={nodes.Cylinder073_2.geometry} material={materials.blanco} />
+        <mesh geometry={nodes.Cylinder073_3.geometry} material={materials.game_of_life} />
+        <mesh geometry={nodes.Cylinder073_4.geometry} material={materials.PyGame} />
+        <mesh geometry={nodes.Cylinder073_5.geometry} material={materials.border_card} />
+      </group>
+      <group position={[1.311, 14.587, -48.526]} rotation={[1.566, 0, 0]} scale={0.929}>
+        <mesh geometry={nodes.Cylinder074.geometry} material={materials.pin} />
+        <mesh geometry={nodes.Cylinder074_1.geometry} material={materials.stampo_python} />
+        <mesh geometry={nodes.Cylinder074_2.geometry} material={materials.blanco} />
+        <mesh geometry={nodes.Cylinder074_3.geometry} material={materials.sort_algo} />
+        <mesh geometry={nodes.Cylinder074_4.geometry} material={materials.border_card} />
+        <mesh geometry={nodes.Cylinder074_5.geometry} material={materials.PyGame} />
+      </group>
       <mesh geometry={nodes.board.geometry} material={materials['plateado.oscuro']} position={[-9.66, 9.087, -49.051]} rotation={[-Math.PI, 0, 0]} scale={[-14.433, -7.296, -0.458]} />
       <group position={[-9.662, 9.118, -48.835]} scale={[13.437, 6.786, 0.124]}>
         <mesh geometry={nodes.Cube015_1.geometry} material={materials.corcho} />
         <mesh geometry={nodes.Cube015_2.geometry} material={materials.blanco} />
       </group>
-      <mesh geometry={nodes.clip.geometry} material={materials.pin} position={[-7.39, 14.587, -48.526]} rotation={[1.566, 0, 0]} scale={0.929} />
-      <mesh geometry={nodes.clip001.geometry} material={materials.pin} position={[-3.054, 14.587, -48.526]} rotation={[1.566, 0, 0]} scale={0.929} />
-      <mesh geometry={nodes.clip002.geometry} material={materials.pin} position={[1.311, 14.587, -48.526]} rotation={[1.566, 0, 0]} scale={0.929} />
       <group position={[35.923, 7.816, -33.786]} rotation={[0, -1.565, 0]} scale={[14.119, 12.355, 2.357]}>
         <mesh geometry={nodes.Cube010_1.geometry} material={materials.desk} />
         <mesh geometry={nodes.Cube010_2.geometry} material={materials.cabinet} />
@@ -623,7 +751,7 @@ export function Model(props) {
         <mesh geometry={nodes.Cube019_1.geometry} material={materials.ramon} />
         <mesh geometry={nodes.Cube019_2.geometry} material={materials.wood_1} />
       </group>
-      <group position={[-2.353, 19.899, 24.163]} rotation={[0, 1.57, -Math.PI]} scale={[-2.534, -2.534, -2.937]}>
+      <group position={[-2.353, 19.899, 24.163]} rotation={[0, 1.57, -Math.PI]} scale={[-2.534, -2.259, -2.937]}>
         <mesh geometry={nodes.Cube035_1.geometry} material={materials.wood_1} />
         <mesh geometry={nodes.Cube035_2.geometry} material={materials.ramon_2} />
       </group>
