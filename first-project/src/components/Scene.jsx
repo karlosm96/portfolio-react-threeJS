@@ -44,7 +44,6 @@ export default function Scene(){
                 frameloop="demand"
             >
                 <Suspense fallback={ <Loader /> }>
-                    
                     <ScrollControls pages={ 5 } damping={ 1 }>
                         <SheetProvider sheet={ sheet }>
                             <Scene_conf />
@@ -101,4 +100,95 @@ function Scene_conf(){
 
 
             <pointLight position={ [24.84, 3.65, -41.39] } intensity={ 50 } color={ '#00ff7f' }/>
+
+
+
+
+                  timeLine.current.to(
+        poringRef.current.rotation, {
+          y: Math.PI * 0.8,
+          x: Math.PI * 0.15,
+          duration: 0.3
+        },
+        1.3
+      )
+
+      timeLine.current.to(
+        poringRef.current.position, {
+          y: poringRef.current.position.y + 0.4,
+          x: poringRef.current.position.x + 0.8,
+          z: poringRef.current.position.z - 0.8,
+          ease: "power1.in",
+          duration: 0.2
+        },
+        1.5
+      )
+
+      timeLine.current.to(
+        poringRef.current.position, {
+          y: poringRef.current.position.y + 0.5,
+          x: poringRef.current.position.x + 1,
+          z: poringRef.current.position.z - 1,
+          duration: 0.05
+        },
+        1.6
+      )
+
+      timeLine.current.to(
+        poringRef.current.position, {
+          y: poringRef.current.position.y + 0.6,
+          x: poringRef.current.position.x + 1.2,
+          z: poringRef.current.position.z - 1.2,
+          ease: "power1.inOut",
+          duration: 0.05
+        },
+        1.625
+      )
+
+      timeLine.current.to(
+        poringRef.current.rotation,{
+          x: Math.PI * -0.15,
+          duration: 0.3
+        },
+        1.65
+      )
+
+      timeLine.current.to(
+        poringRef.current.position, {
+          y: poringRef.current.position.y + 0.5,
+          x: poringRef.current.position.x + 1.4,
+          z: poringRef.current.position.z - 1.4,
+          duration: 0.5
+        },
+        1.7
+      )
+
+      timeLine.current.to(
+        poringRef.current.position, {
+          y: poringRef.current.position.y + 0.4,
+          x: poringRef.current.position.x + 1.6,
+          z: poringRef.current.position.z - 1.6,
+          duration: 0.5
+        },
+        1.725
+      )
+
+      timeLine.current.to(
+        poringRef.current.position, {
+          y: poringRef.current.position.y + 0,
+          x: poringRef.current.position.x + 1.8,
+          z: poringRef.current.position.z - 1.8,
+          ease: "power1.out",
+          duration: 0.2
+        },
+        1.750
+      )
+
+      timeLine.current.to(
+        poringRef.current.rotation, {
+          y: Math.PI * 1.1,
+          duration: 0.3
+        },
+        2.4
+      )
 */
