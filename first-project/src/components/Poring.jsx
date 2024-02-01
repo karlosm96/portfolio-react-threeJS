@@ -1,5 +1,5 @@
-import React, { useLayoutEffect, useMemo, useRef } from "react";
-import { useGLTF, useAnimations, useScroll } from "@react-three/drei";
+import React, { useLayoutEffect, useRef } from "react";
+import { useGLTF, useScroll } from "@react-three/drei";
 import { a } from '@react-spring/three';
 import { useFrame } from "@react-three/fiber"; 
 import { val } from '@theatre/core'
@@ -14,19 +14,24 @@ export default function Poring(...props){
     const timeLine = useRef();
 
     const [ scale, position ] = props; 
-    const { nodes, materials, animations } = useGLTF(GLtfDir);
-    const { actions, names } = useAnimations(animations, poringRef);
+    const { nodes, materials } = useGLTF(GLtfDir);
 
     const scrollControll = useScroll();
     const preliminar_sheet = useCurrentSheet();
     const sequenceLength = val(preliminar_sheet.sequence.pointer.length);
 
+    // Set in the current poring timeline the starting position
+    // (Calculate the start position: offset wheel * main sheet lenght)
     useFrame(()=>{
       timeLine.current.seek(scrollControll.offset * sequenceLength);
     })
-      
+
+    // Set the poring animation
     useLayoutEffect(()=>{
       timeLine.current = gsap.timeline();
+      const positionX = poringRef.current.position.x;
+      const positionY = poringRef.current.position.y;
+      const positionZ = poringRef.current.position.z;
 
       timeLine.current.to(
         poringRef.current.rotation, {
@@ -39,9 +44,9 @@ export default function Poring(...props){
 
       timeLine.current.to(
         poringRef.current.position, {
-          y: poringRef.current.position.y + 0.4,
-          x: poringRef.current.position.x + 0.8,
-          z: poringRef.current.position.z - 0.8,
+          y: positionY + 0.4,
+          x: positionX + 0.8,
+          z: positionZ - 0.8,
           ease: "power1.in",
           duration: 0.2
         },
@@ -50,9 +55,9 @@ export default function Poring(...props){
 
       timeLine.current.to(
         poringRef.current.position, {
-          y: poringRef.current.position.y + 0.5,
-          x: poringRef.current.position.x + 1,
-          z: poringRef.current.position.z - 1,
+          y: positionY + 0.5,
+          x: positionX + 1,
+          z: positionZ - 1,
           ease: "power1.in",
           duration: 0.05
         },
@@ -61,10 +66,9 @@ export default function Poring(...props){
 
       timeLine.current.to(
         poringRef.current.position, {
-          y: poringRef.current.position.y + 0.6,
-          x: poringRef.current.position.x + 1.2,
-          z: poringRef.current.position.z - 1.2,
-
+          y: positionY + 0.6,
+          x: positionX + 1.2,
+          z: positionZ - 1.2,
           duration: 0.05
         },
         1.625
@@ -81,9 +85,9 @@ export default function Poring(...props){
 
       timeLine.current.to(
         poringRef.current.position, {
-          y: poringRef.current.position.y + 0.5,
-          x: poringRef.current.position.x + 1.4,
-          z: poringRef.current.position.z - 1.4,
+          y: positionY + 0.5,
+          x: positionX + 1.4,
+          z: positionZ - 1.4,
           ease: "power1.out",
           duration: 0.05
         },
@@ -92,9 +96,9 @@ export default function Poring(...props){
 
       timeLine.current.to(
         poringRef.current.position, {
-          y: poringRef.current.position.y + 0.4,
-          x: poringRef.current.position.x + 1.6,
-          z: poringRef.current.position.z - 1.6,
+          y: positionY + 0.4,
+          x: positionX + 1.6,
+          z: positionZ - 1.6,
           ease: "power1.out",
           duration: 0.05
         },
@@ -103,9 +107,9 @@ export default function Poring(...props){
 
       timeLine.current.to(
         poringRef.current.position, {
-          y: poringRef.current.position.y + 0,
-          x: poringRef.current.position.x + 1.8,
-          z: poringRef.current.position.z - 1.8,
+          y: positionY + 0,
+          x: positionX + 1.8,
+          z: positionZ - 1.8,
           ease: "power1.out",
           duration: 0.2
         },
@@ -115,6 +119,7 @@ export default function Poring(...props){
       timeLine.current.to(
         poringRef.current.rotation, {
           y: Math.PI * 1.1,
+          x: 0,
           duration: 0.3,
         },
         2.4

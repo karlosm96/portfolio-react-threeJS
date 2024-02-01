@@ -5,7 +5,7 @@ import room from '../assets/models/room.glb'
 
 import Book from "./Book";
 import Poring from "./Poring";
-import vidBeach from '../assets/videos/demo.mp3';
+import PoringVid from '../assets/videos/poring.mp4';
 
 export function Room( {scale, position} ) {
 
@@ -206,7 +206,7 @@ export function Room( {scale, position} ) {
       </a.group>
 
       <mesh geometry={nodes.top_notebook002.geometry} material={nodes.top_notebook002.material} position={[-4.88, 1.786, 4.62]} rotation={[-0.025, -4.338, 1.579]} scale={[1.374, 0.03, 2.151]}>
-        <VideoMaterial url={vidBeach} />
+        <VideoMaterial url={PoringVid} />
       </mesh>
 
       <a.group position={[-6.438, 0.206, 6.143]} rotation={[0, 0.377, 0]} scale={[0.114, 0.004, 0.044]}>

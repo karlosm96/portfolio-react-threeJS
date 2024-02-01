@@ -5,7 +5,6 @@ import { useCurrentSheet } from '@theatre/r3f';
 import { val } from '@theatre/core'
 import { useFrame } from "@react-three/fiber";
 
-import { initialStatesAnimations, activateAnimation, resumePausedAnimation } from "../extra_functions/handleAnimations";
 import GLtfDir from '../assets/models/poster.glb';
 import gsap from 'gsap';
 
@@ -14,14 +13,17 @@ export default function Poster(...props){
     const timeLine = useRef();
     const preliminarSheet = useCurrentSheet();
     const scrollControl = useScroll();
-    const { nodes, materials, animations } = useGLTF(GLtfDir);
+    const { nodes, materials } = useGLTF(GLtfDir);
 
     const sequenceLength = val(preliminarSheet.sequence.pointer.length);
 
+    // Set in the current poring timeline the starting position
+    // (Calculate the start position: offset wheel * main sheet lenght)
     useFrame(()=>{
         timeLine.current.seek(scrollControl.offset * sequenceLength);
     })
 
+    // Set the poster animation
     useLayoutEffect(()=>{
         timeLine.current = gsap.timeline();
 
