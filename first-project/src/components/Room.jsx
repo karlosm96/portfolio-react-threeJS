@@ -40,9 +40,7 @@ export function Room( {scale, position} ) {
   }
 
   return (
-    
     <>
-    
     <a.group name="Scene">
       <Poring scale={ scale } position={ position }/>
       <Book scale={ scale } position={ position }/>

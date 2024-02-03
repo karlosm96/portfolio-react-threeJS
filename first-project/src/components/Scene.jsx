@@ -41,8 +41,7 @@ export default function Scene(){
         <section>
             <Canvas className="section-canvas"
                 gl={{ preserveDrawingBuffer: true }}
-                frameloop="demand"
-            >
+                frameloop="demand">
                 <Suspense fallback={ <Loader /> }>
                     <ScrollControls pages={ 5 } damping={ 1 }>
                         <SheetProvider sheet={ sheet }>

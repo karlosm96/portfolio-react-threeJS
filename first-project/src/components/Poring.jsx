@@ -33,10 +33,14 @@ export default function Poring(...props){
       const positionY = poringRef.current.position.y;
       const positionZ = poringRef.current.position.z;
 
+      // ---------------
+      // To About book
+      // ---------------
       timeLine.current.to(
         poringRef.current.rotation, {
           y: Math.PI * 0.8,
           x: Math.PI * 0.15,
+          z: poringRef.current.rotation.z * 0,
           duration: 0.3,
         },
         1.3
@@ -120,9 +124,206 @@ export default function Poring(...props){
         poringRef.current.rotation, {
           y: Math.PI * 1.1,
           x: 0,
-          duration: 0.3,
+          duration: 0.5,
         },
         2.4
+      )
+
+      // -----------------
+      // To Origin point
+      // -----------------
+      timeLine.current.to(
+          poringRef.current.rotation, {
+              y: Math.PI * 1.7,
+              x: Math.PI * -0.15,
+              duration: 0.3,
+              ease: "power1.inOut"
+          },
+          7.9
+      );
+    
+      timeLine.current.to(
+          poringRef.current.position, {
+              y: positionY + 0.4,
+              x: positionX + 1.8,
+              z: positionZ - 1.8,
+              ease: "power1.inOut",
+              duration: 0.2
+          },
+          8.2
+      );
+      
+      timeLine.current.to(
+          poringRef.current.position, {
+              y: positionY + 0.5,
+              x: positionX + 1.6,
+              z: positionZ - 1.6,
+              ease: "power1.inOut",
+              duration: 0.05
+          },
+          8.3
+      );
+      
+      timeLine.current.to(
+          poringRef.current.position, {
+              y: positionY + 0.6,
+              x: positionX + 1.4,
+              z: positionZ - 1.4,
+              duration: 0.05
+          },
+          8.325
+      );
+      
+      timeLine.current.to(
+          poringRef.current.rotation,{
+              x: Math.PI * 0.15,
+              z: Math.PI * 0.15,
+              ease: "power1.inOut",
+              duration: 0.2
+          },
+          8.35
+      );
+      
+      timeLine.current.to(
+          poringRef.current.position, {
+              y: positionY + 0.5,
+              x: positionX + 1.2,
+              z: positionZ - 1.2,
+              ease: "power1.inOut",
+              duration: 0.05
+          },
+          8.4
+      );
+      
+      timeLine.current.to(
+          poringRef.current.position, {
+              y: positionY + 0.4,
+              x: positionX + 1,
+              z: positionZ - 1,
+              ease: "power1.out",
+              duration: 0.05
+          },
+          8.425
+      );
+      
+      timeLine.current.to(
+          poringRef.current.position, {
+              y: positionY + 0.3,
+              x: positionX + 0.8,
+              z: positionZ - 0.8,
+              ease: "power1.out",
+              duration: 0.05
+          },
+          8.45
+      );
+      
+      timeLine.current.to(
+          poringRef.current.position, {
+              y: positionY,
+              x: positionX,
+              z: positionZ,
+              ease: "power1.out",
+              duration: 0.2
+          },
+          8.5
+      );
+
+      // ---------------
+      // To Laptop
+      // ---------------
+      timeLine.current.to(
+        poringRef.current.rotation, {
+            x: Math.PI * -0.15,
+            z: poringRef.current.rotation.z * 0,
+            duration: 0.2,
+            ease: "power1.inOut" 
+        },
+        8.6
+      )
+      
+      timeLine.current.to(
+        poringRef.current.position, {
+            y: positionY + 0.4,
+            x: positionX - 0.225,
+            z: positionZ + 0.242,
+            ease: "power1.inOut", 
+            duration: 0.1
+        },
+        8.7
+      )
+      
+      timeLine.current.to(
+        poringRef.current.position, {
+            y: positionY + 0.5,
+            x: positionX - 0.45,
+            z: positionZ + 0.484,
+            ease: "power1.inOut", 
+            duration: 0.1 
+        },
+        8.75
+      )
+      
+      timeLine.current.to(
+        poringRef.current.position, {
+            y: positionY + 0.6,
+            x: positionX - 0.675,
+            z: positionZ + 0.726,
+            ease: "power1.inOut", 
+            duration: 0.1 
+        },
+        8.8
+      )
+      
+      timeLine.current.to(
+        poringRef.current.rotation,{
+            x: Math.PI * 0.15,
+            z: Math.PI * 0.15,
+            ease: "power1.inOut", 
+            duration: 0.1 
+        },
+        8.825
+      )
+      
+      timeLine.current.to(
+        poringRef.current.position, {
+            y: positionY + 0.5,
+            x: positionX - 0.9,
+            z: positionZ + 0.968,
+            ease: "power1.inOut", 
+            duration: 0.1 
+        },
+        8.85
+      )
+      
+      timeLine.current.to(
+        poringRef.current.position, {
+            y: positionY + 0.4,
+            x: positionX - 1.125,
+            z: positionZ + 1.21,
+            ease: "power1.inOut", 
+            duration: 0.1 
+        },
+        8.9
+      )
+      
+      timeLine.current.to(
+        poringRef.current.position, {
+            y: positionY + 0.0,
+            x: positionX - 1.35,
+            z: positionZ + 1.45,
+            ease: "power1.inOut", 
+            duration: 0.1
+        },
+        8.95
+      )
+      
+      timeLine.current.to(
+        poringRef.current.rotation,{
+            y: Math.PI * 1.48,
+            ease: "power1.inOut", 
+            duration: 0.5 
+        },
+        9
       )
 
     }, [])
