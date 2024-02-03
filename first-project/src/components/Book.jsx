@@ -1,7 +1,6 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { useGLTF, useAnimations, useScroll, Html } from "@react-three/drei";
 import { a } from '@react-spring/three';
-import { useFrame } from "@react-three/fiber";
 
 import { useCurrentSheet } from '@theatre/r3f';
 
@@ -15,11 +14,16 @@ export default function Book(...props){
     const { nodes, materials, animations } = useGLTF(GLtfDir);
     const { actions, names } = useAnimations(animations, bookRef);
     const [ initAnimation, setInitAnimation ] = useState(false);
+    const [hovered, setHovered] = useState(false);
 
     //Set the initial properties for each animation
-    useEffect(() =>{
+    useLayoutEffect(() =>{
         initialStatesAnimations(names, actions, true, 1);
     }, [])
+
+    useEffect(() => {
+        document.body.style.cursor = hovered ? 'pointer' : 'auto';
+    }, [hovered])
 
     //Activate - Desactivate animations
     useEffect(() =>{
@@ -36,9 +40,11 @@ export default function Book(...props){
     return (
         <a.group ref={bookRef} {...props}>
             <a.group name="Scene">
-                <a.group name="parent" position={[0.612, 0.054, -0.446]} rotation={[0, -0.142, 0]} scale={1.431}>
-                <a.group name="Empty" position={[0, 0.002, 0]} rotation={[Math.PI / 2, 0, 0]} scale={0.255} />
-                <mesh name="Plane" geometry={nodes.Plane.geometry} material={materials.front} position={[0, 0.01, 0]} scale={[0.8, 1, 1]} onClick={ (e) =>{ setInitAnimation(!initAnimation) }} />
+                <a.group name="parent" position={[0.612, 0.054, -0.446]} rotation={[0, -0.142, 0]} scale={1.431}
+                    >
+                    <a.group name="Empty" position={[0, 0.002, 0]} rotation={[Math.PI / 2, 0, 0]} scale={0.255} />
+                    <mesh onPointerEnter={ (e)=>{setHovered(true)} }
+                    onPointerLeave={ (e)=>{setHovered(false)} }  name="Plane" geometry={nodes.Plane.geometry} material={materials.front} position={[0, 0.01, 0]} scale={[0.8, 1, 1]} onClick={ (e) =>{ setInitAnimation(!initAnimation) }} />
                 </a.group>
                 <a.group name="parent001" position={[0.612, 0.06, -0.446]} rotation={[0, -0.142, 0]} scale={1.431}>
                 <a.group name="Empty001" position={[0, -0.014, 0]} rotation={[Math.PI / 2, 0, 0]} scale={0.255} />

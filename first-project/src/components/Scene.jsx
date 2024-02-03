@@ -15,31 +15,29 @@ export default function Scene(){
     const [canvasSize, setCanvasSize] = useState({ width: window.innerWidth, height: window.innerHeight });
 
     useEffect(() =>{
+        // Responsive section
+        const handleResize = () => {
+            setCanvasSize({ width: window.innerWidth, height: window.innerHeight });
+        };
 
-      // Responsive secition
-      const handleResize = () => {
-          setCanvasSize({ width: window.innerWidth, height: window.innerHeight });
-      };
+        window.addEventListener('resize', handleResize);
 
-      window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
-      return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  const adjustSceneSize = () =>{
-      const { width } = canvasSize;
-      const isMobile = width < 768;
-      let screeScale;
-      let screenPosition = [ isMobile ? 0 : 0.5, isMobile ? -width : -6.5, -43];
-      
-      if(width < 765){
-          screeScale = [0.9, 0.9, 0.9];
-      } else{
-          screeScale = [0.1, 0.1, 0.1];
-      }
-
-      return [screeScale, screenPosition];
-  }
+    const adjustSceneSize = () =>{
+        const { width } = canvasSize;
+        const isMobile = width < 768;
+        let screeScale;
+        let screenPosition = [ isMobile ? 0 : 0.5, isMobile ? -width : -6.5, -43];
+        
+        if(width < 765){
+            screeScale = [0.9, 0.9, 0.9];
+        } else{
+            screeScale = [0.1, 0.1, 0.1];
+        }
+        return [screeScale, screenPosition];
+    }
 
     const [roomScale, roomPosition] = adjustSceneSize(); 
 
@@ -108,5 +106,4 @@ function SceneConfiguration({ canvasSize }){
 
 
             <pointLight position={ [24.84, 3.65, -41.39] } intensity={ 50 } color={ '#00ff7f' }/>
-
 */
