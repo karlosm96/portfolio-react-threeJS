@@ -1,39 +1,45 @@
 import { useEffect, useRef, useState } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { Suspense } from "react";
 import { getProject, val } from '@theatre/core'
-import { OrbitControls, ScrollControls, Sky, useHelper, useScroll } from "@react-three/drei";
+import { OrbitControls, ScrollControls, Sky, useScroll } from "@react-three/drei";
 import { SheetProvider, PerspectiveCamera, useCurrentSheet } from '@theatre/r3f';
 
 import Room from './Room';
 import Loader from "./Loader";
 import '../styles/home.css';
 import cameraMoveState from '../assets/camera/camera_mov.json';
-import { DirectionalLight, DirectionalLightHelper } from "three";
 
 export default function Scene(){
     const sheet = getProject('preliminar name', { state: cameraMoveState }).sheet('Scene');
-    const [height, setHeight] = useState(0);
-    const [width, setWidth] = useState(0);
+    const [canvasSize, setCanvasSize] = useState({ width: window.innerWidth, height: window.innerHeight });
 
     useEffect(() =>{
-        setHeight(window.innerHeight);
-        setWidth(window.innerWidth);
-    }, [width])
 
-    const adjustSceneSize = () =>{
-        let screeScale;
-        let screenPosition = [0. -6.5, -43];
-        
-        if(width < 765){
-            screeScale = [0.9, 0.9, 0.9];
-            
-        } else{
-            screeScale = [.5, .5, .5];
-        }
+      // Responsive secition
+      const handleResize = () => {
+          setCanvasSize({ width: window.innerWidth, height: window.innerHeight });
+      };
 
-        return [screeScale, screenPosition];
-    }
+      window.addEventListener('resize', handleResize);
+
+      return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const adjustSceneSize = () =>{
+      const { width } = canvasSize;
+      const isMobile = width < 768;
+      let screeScale;
+      let screenPosition = [ isMobile ? 0 : 0.5, isMobile ? -width : -6.5, -43];
+      
+      if(width < 765){
+          screeScale = [0.9, 0.9, 0.9];
+      } else{
+          screeScale = [0.1, 0.1, 0.1];
+      }
+
+      return [screeScale, screenPosition];
+  }
 
     const [roomScale, roomPosition] = adjustSceneSize(); 
 
@@ -45,7 +51,7 @@ export default function Scene(){
                 <Suspense fallback={ <Loader /> }>
                     <ScrollControls pages={ 5 } damping={ 1 }>
                         <SheetProvider sheet={ sheet }>
-                            <Scene_conf />
+                            <SceneConfiguration canvasSize={ canvasSize } />
                             <Room scale={ roomScale } position={ roomPosition } />
                         </SheetProvider>
                     </ScrollControls>
@@ -55,9 +61,12 @@ export default function Scene(){
     )
 }
 
-function Scene_conf(){
+function SceneConfiguration({ canvasSize }){
     const preliminar_sheet = useCurrentSheet();
     const scroll = useScroll();
+
+    const aspect = canvasSize.width / canvasSize.height;
+    const camera = useRef();
 
     useFrame(() =>{
         const sequenceLength = val(preliminar_sheet.sequence.pointer.length);
@@ -66,7 +75,7 @@ function Scene_conf(){
 
     return(
         <>
-            <PerspectiveCamera theatreKey='Camera' makeDefault position={ [0, 0, 0] } fov={ 90 } near={ 0.1 } far={ 70 } />
+            <PerspectiveCamera red={ camera } theatreKey='Camera' makeDefault position={ [0, 0, 0] } fov={ 150 } near={ 0.1 } far={ 500 } aspect={aspect} onUpdate={(c) => c.updateProjectionMatrix()}/>
             <directionalLight position={ [-50, 25, -100] } intensity={ 2 } color={ '#fff8b6' } />
             <directionalLight position={ [-50, 0, -100] } intensity={ 2 } color={ '#ffe4a3' }/>
             <directionalLight position={ [-50, 12, -100] } intensity={ 2 } color={ '#FAD6A5' }/>
@@ -100,94 +109,4 @@ function Scene_conf(){
 
             <pointLight position={ [24.84, 3.65, -41.39] } intensity={ 50 } color={ '#00ff7f' }/>
 
-
-
-
-                  timeLine.current.to(
-        poringRef.current.rotation, {
-          y: Math.PI * 0.8,
-          x: Math.PI * 0.15,
-          duration: 0.3
-        },
-        1.3
-      )
-
-      timeLine.current.to(
-        poringRef.current.position, {
-          y: poringRef.current.position.y + 0.4,
-          x: poringRef.current.position.x + 0.8,
-          z: poringRef.current.position.z - 0.8,
-          ease: "power1.in",
-          duration: 0.2
-        },
-        1.5
-      )
-
-      timeLine.current.to(
-        poringRef.current.position, {
-          y: poringRef.current.position.y + 0.5,
-          x: poringRef.current.position.x + 1,
-          z: poringRef.current.position.z - 1,
-          duration: 0.05
-        },
-        1.6
-      )
-
-      timeLine.current.to(
-        poringRef.current.position, {
-          y: poringRef.current.position.y + 0.6,
-          x: poringRef.current.position.x + 1.2,
-          z: poringRef.current.position.z - 1.2,
-          ease: "power1.inOut",
-          duration: 0.05
-        },
-        1.625
-      )
-
-      timeLine.current.to(
-        poringRef.current.rotation,{
-          x: Math.PI * -0.15,
-          duration: 0.3
-        },
-        1.65
-      )
-
-      timeLine.current.to(
-        poringRef.current.position, {
-          y: poringRef.current.position.y + 0.5,
-          x: poringRef.current.position.x + 1.4,
-          z: poringRef.current.position.z - 1.4,
-          duration: 0.5
-        },
-        1.7
-      )
-
-      timeLine.current.to(
-        poringRef.current.position, {
-          y: poringRef.current.position.y + 0.4,
-          x: poringRef.current.position.x + 1.6,
-          z: poringRef.current.position.z - 1.6,
-          duration: 0.5
-        },
-        1.725
-      )
-
-      timeLine.current.to(
-        poringRef.current.position, {
-          y: poringRef.current.position.y + 0,
-          x: poringRef.current.position.x + 1.8,
-          z: poringRef.current.position.z - 1.8,
-          ease: "power1.out",
-          duration: 0.2
-        },
-        1.750
-      )
-
-      timeLine.current.to(
-        poringRef.current.rotation, {
-          y: Math.PI * 1.1,
-          duration: 0.3
-        },
-        2.4
-      )
 */

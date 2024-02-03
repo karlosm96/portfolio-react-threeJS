@@ -23,6 +23,8 @@ export default function Book(...props){
 
     //Activate - Desactivate animations
     useEffect(() =>{
+        document.body.style.cursor = hovered ? 'pointer' : 'auto';
+
         if(!actions[names[0]].isRunning()){
             activateAnimation(names, actions, 0, initAnimation);
             setTimeout(() =>{
@@ -30,15 +32,13 @@ export default function Book(...props){
             }, 20000)
         }
       }, [initAnimation])
-
-    //Activate the book animation in the wheel position 3.0
     
     return (
         <a.group ref={bookRef} {...props}>
             <a.group name="Scene">
                 <a.group name="parent" position={[0.612, 0.054, -0.446]} rotation={[0, -0.142, 0]} scale={1.431}>
                 <a.group name="Empty" position={[0, 0.002, 0]} rotation={[Math.PI / 2, 0, 0]} scale={0.255} />
-                <mesh name="Plane" geometry={nodes.Plane.geometry} material={materials.front} position={[0, 0.01, 0]} scale={[0.8, 1, 1]} onWheel={ (e) =>{ setInitAnimation(true) }} onClick={ (e) =>{ setInitAnimation(!initAnimation) }} />
+                <mesh name="Plane" geometry={nodes.Plane.geometry} material={materials.front} position={[0, 0.01, 0]} scale={[0.8, 1, 1]} onClick={ (e) =>{ setInitAnimation(!initAnimation) }} />
                 </a.group>
                 <a.group name="parent001" position={[0.612, 0.06, -0.446]} rotation={[0, -0.142, 0]} scale={1.431}>
                 <a.group name="Empty001" position={[0, -0.014, 0]} rotation={[Math.PI / 2, 0, 0]} scale={0.255} />

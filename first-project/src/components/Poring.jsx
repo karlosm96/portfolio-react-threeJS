@@ -28,6 +28,7 @@ export default function Poring(...props){
 
     // Set the poring animation
     useLayoutEffect(()=>{
+
       timeLine.current = gsap.timeline();
       const positionX = poringRef.current.position.x;
       const positionY = poringRef.current.position.y;

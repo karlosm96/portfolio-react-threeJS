@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import SideBar from "./SideBar";
 import '../styles/home.css';
 import { Fragment } from "react";
@@ -6,6 +5,8 @@ import Scene from "./Scene";
 
 export default function Home(){
 
+    
+    
     return(
         <Fragment>
             <Scene />
@@ -111,3 +112,13 @@ function About(){
         </div>
     )
 }
+
+/**
+ * gsap.to(document.getElementById("root"),{
+        onClick: () =>{
+          console.log("buen dia");
+        }
+      },
+      5.5
+    )
+ */
