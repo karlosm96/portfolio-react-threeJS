@@ -1,8 +1,14 @@
-import React, { useEffect, useRef, useState } from "react";
-import { useGLTF, useVideoTexture, Html } from "@react-three/drei";
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useGLTF, useVideoTexture } from "@react-three/drei";
+import { useFrame } from "@react-three/fiber";
+import { useScroll } from "@react-three/drei";
+import { val } from '@theatre/core'
 import { a } from '@react-spring/three';
-import room from '../assets/models/room.glb'
+import { useCurrentSheet } from '@theatre/r3f';
 
+import gsap from 'gsap';
+
+import room from '../assets/models/room.glb'
 import Book from "./Book";
 import Poring from "./Poring";
 import PoringVid from '../assets/videos/poring.mp4';
@@ -11,6 +17,38 @@ export function Room( {scale, position} ) {
 
   const refRoom = useRef();
   const { nodes, materials } = useGLTF(room);
+
+  const scrollControll = useScroll();
+  const timeLine = useRef();
+  const currentSheet = useCurrentSheet();
+  const sequenceLength = val(currentSheet.sequence.pointer.length);
+
+  // Controll the footer animation
+  useLayoutEffect(()=>{
+      timeLine.current = gsap.timeline();
+      const footer = document.getElementById("footer");
+
+      timeLine.current.to(footer,{
+          onStart: () =>{
+            footer.classList.remove('hidden');
+          }
+        },
+        0.1
+      )
+
+      timeLine.current.to(footer,{
+        onScroll: () =>{
+          footer.classList.add('hidden');
+        }
+      },
+      2.2
+    )
+
+  }, [])
+
+  useFrame(()=>{
+      timeLine.current.seek(scrollControll.offset * sequenceLength);
+  })
 
   const defaultPositionCards = {
     miDulceOnline : [-7.39, 14.587, -48.526],

@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from "react";
-import { Canvas, useFrame, useThree } from "@react-three/fiber";
+import { Canvas, useFrame } from "@react-three/fiber";
 import { Suspense } from "react";
 import { getProject, val } from '@theatre/core'
-import { OrbitControls, ScrollControls, Sky, useScroll } from "@react-three/drei";
+import { OrbitControls, ScrollControls, useScroll } from "@react-three/drei";
 import { SheetProvider, PerspectiveCamera, useCurrentSheet } from '@theatre/r3f';
 
 import Room from './Room';
@@ -19,9 +19,9 @@ export default function Scene(){
         const handleResize = () => {
             setCanvasSize({ width: window.innerWidth, height: window.innerHeight });
         };
-
+  
         window.addEventListener('resize', handleResize);
-
+  
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 

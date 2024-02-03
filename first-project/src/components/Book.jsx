@@ -1,16 +1,12 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
-import { useGLTF, useAnimations, useScroll, Html } from "@react-three/drei";
+import { useGLTF, useAnimations } from "@react-three/drei";
 import { a } from '@react-spring/three';
-
-import { useCurrentSheet } from '@theatre/r3f';
 
 import {initialStatesAnimations, activateAnimation, resumePausedAnimation} from "../extra_functions/handleAnimations";
 import GLtfDir from '../assets/models/book_anim.glb';
-import SideBar from "./SideBar";
 
 export default function Book(...props){
     const bookRef = useRef();
-    const sheet = useCurrentSheet();
     const { nodes, materials, animations } = useGLTF(GLtfDir);
     const { actions, names } = useAnimations(animations, bookRef);
     const [ initAnimation, setInitAnimation ] = useState(false);
