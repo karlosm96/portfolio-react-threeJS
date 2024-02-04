@@ -15,13 +15,3 @@ export default function Home(){
         </Fragment>
     )
 }
-
-/**
- * gsap.to(document.getElementById("root"),{
-        onClick: () =>{
-          console.log("buen dia");
-        }
-      },
-      5.5
-    )
- */

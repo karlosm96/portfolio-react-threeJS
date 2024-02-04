@@ -23,26 +23,64 @@ export function Room( {scale, position} ) {
   const currentSheet = useCurrentSheet();
   const sequenceLength = val(currentSheet.sequence.pointer.length);
 
+  useFrame(()=>{
+    timeLine.current.seek(scrollControll.offset * sequenceLength);
+  })
+
   // Controll the footer animation
   useLayoutEffect(()=>{
       timeLine.current = gsap.timeline();
-      const footer = document.getElementById("footer");
+      const scrollFooter = document.getElementById("scroll-footer");
+      const clickFooter = document.getElementById("click-footer");
 
-      timeLine.current.to(footer,{
-          onStart: () =>{
-            footer.classList.remove('hidden');
-          }
+      timeLine.current.to(refRoom,{
+        onComplete: () =>{
+          scrollFooter.classList.remove('hidden');
+        },
+        duration: 0.1,
         },
         0.1
       )
 
-      timeLine.current.to(footer,{
-        onScroll: () =>{
-          footer.classList.add('hidden');
-        }
+      timeLine.current.to(refRoom,{
+        onComplete: () =>{
+          scrollFooter.classList.remove('hidden');
+          clickFooter.classList.add('hidden');
+        },
+        duration: 0.1,
+      },
+      2
+      )
+
+      timeLine.current.to(refRoom,{
+        onComplete: () =>{
+          scrollFooter.classList.add('hidden');
+          clickFooter.classList.remove('hidden');
+        },
+        duration: 0.1,
       },
       2.2
-    )
+      )
+      
+      timeLine.current.to(refRoom,{
+        onComplete: () =>{
+          scrollFooter.classList.add('hidden');
+          clickFooter.classList.remove('hidden');
+        },
+        duration: 0.1,
+      },
+      7.8
+      )
+
+      timeLine.current.to(refRoom,{
+        onComplete: () =>{
+          scrollFooter.classList.remove('hidden');
+          clickFooter.classList.add('hidden');
+        },
+        duration: 0.1,
+      },
+      8
+      )
 
   }, [])
 
@@ -79,7 +117,7 @@ export function Room( {scale, position} ) {
 
   return (
     <>
-    <a.group name="Scene">
+    <a.group name="Scene" ref={refRoom}>
       <Poring scale={ scale } position={ position }/>
       <Book scale={ scale } position={ position }/>
 
