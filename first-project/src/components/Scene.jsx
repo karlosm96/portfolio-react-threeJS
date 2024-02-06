@@ -73,7 +73,7 @@ function SceneConfiguration({ canvasSize }){
 
     return(
         <>
-            <PerspectiveCamera red={ camera } theatreKey='Camera' makeDefault position={ [0, 0, 0] } fov={ 150 } near={ 0.1 } far={ 500 } aspect={aspect} onUpdate={(c) => c.updateProjectionMatrix()}/>
+            <PerspectiveCamera red={ camera } theatreKey='Camera' makeDefault position={ [0, 0, 0] } fov={ 75 } near={ 0.01 } far={ 1000 } aspect={aspect} onUpdate={(c) => c.updateProjectionMatrix()}/>
             <directionalLight position={ [-50, 25, -100] } intensity={ 2 } color={ '#fff8b6' } />
             <directionalLight position={ [-50, 0, -100] } intensity={ 2 } color={ '#ffe4a3' }/>
             <directionalLight position={ [-50, 12, -100] } intensity={ 2 } color={ '#FAD6A5' }/>
@@ -106,4 +106,25 @@ function SceneConfiguration({ canvasSize }){
 
 
             <pointLight position={ [24.84, 3.65, -41.39] } intensity={ 50 } color={ '#00ff7f' }/>
+
+
+
+
+            gsap.to(refRoom.current, {
+        opacity: 1,
+        scrollTrigger: {
+          trigger: refRoom.current,
+          start: "top 80%", // Puedes ajustar estos valores según tus necesidades
+          end: "bottom 20%", // Puedes ajustar estos valores según tus necesidades
+          toggleActions: "play none none reverse",
+          onEnter: () => {
+            scrollFooter.classList.remove('hidden');
+          },
+          onLeaveBack: () => {
+            scrollFooter.classList.add('hidden');
+            clickFooter.classList.remove('hidden');
+          }
+        }
+      });
+
 */

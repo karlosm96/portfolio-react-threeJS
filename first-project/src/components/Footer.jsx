@@ -2,15 +2,23 @@ export default function Footer( {activation, action} ){
 
     return(
         <>
-            <footer id="footer" className="">
-                <div id="scroll-footer" className="hidden">
+            <footer id="footer" className="hidden">
+                <div id="scroll-footer">
                     <div id="flex-scroll-footer">
                         <div className='icon-scroll' />
                         <h4>Scroll to navigate</h4>
                     </div>
                 </div>
+            </footer>
+        </>
+    )
+}
 
-                <div id="click-footer" className="hidden">
+/**
+ * const scrollFooter = document.getElementById("scroll-footer");
+    const clickFooter = document.getElementById("click-footer");
+ * 
+ * <div id="click-footer" className="hidden">
                     <div id="flex-click-footer">
                         <div id="click-animation">
                             <div id="parent">
@@ -25,7 +33,4 @@ export default function Footer( {activation, action} ){
                         <h4>Click to interact and Scroll</h4>
                     </div>
                 </div>
-            </footer>
-        </>
-    )
-}
+ */

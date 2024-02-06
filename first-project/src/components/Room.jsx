@@ -16,6 +16,7 @@ import PoringVid from '../assets/videos/poring.mp4';
 export function Room( {scale, position} ) {
 
   const refRoom = useRef();
+  const model = useGLTF(room);
   const { nodes, materials } = useGLTF(room);
 
   const scrollControll = useScroll();
@@ -30,63 +31,17 @@ export function Room( {scale, position} ) {
   // Controll the footer animation
   useLayoutEffect(()=>{
       timeLine.current = gsap.timeline();
-      const scrollFooter = document.getElementById("scroll-footer");
-      const clickFooter = document.getElementById("click-footer");
+      const footer = document.getElementById("footer");
 
       timeLine.current.to(refRoom,{
         onComplete: () =>{
-          scrollFooter.classList.remove('hidden');
+          footer.classList.remove('hidden');
         },
         duration: 0.1,
         },
         0.1
       )
-
-      timeLine.current.to(refRoom,{
-        onComplete: () =>{
-          scrollFooter.classList.remove('hidden');
-          clickFooter.classList.add('hidden');
-        },
-        duration: 0.1,
-      },
-      2
-      )
-
-      timeLine.current.to(refRoom,{
-        onComplete: () =>{
-          scrollFooter.classList.add('hidden');
-          clickFooter.classList.remove('hidden');
-        },
-        duration: 0.1,
-      },
-      2.2
-      )
-      
-      timeLine.current.to(refRoom,{
-        onComplete: () =>{
-          scrollFooter.classList.add('hidden');
-          clickFooter.classList.remove('hidden');
-        },
-        duration: 0.1,
-      },
-      7.8
-      )
-
-      timeLine.current.to(refRoom,{
-        onComplete: () =>{
-          scrollFooter.classList.remove('hidden');
-          clickFooter.classList.add('hidden');
-        },
-        duration: 0.1,
-      },
-      8
-      )
-
   }, [])
-
-  useFrame(()=>{
-      timeLine.current.seek(scrollControll.offset * sequenceLength);
-  })
 
   const defaultPositionCards = {
     miDulceOnline : [-7.39, 14.587, -48.526],
