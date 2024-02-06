@@ -53,7 +53,7 @@ export default function Model(props) {
         return(
             <>
             <a.group {...props} ref={generalTimeLine}>
-                <mesh geometry={nodes['15797_Pointer_v1_new'].geometry} position={props.position} rotation={props.rotation} scale={props.scale}>
+                <mesh geometry={nodes['15797_Pointer_v1_new'].geometry} position={props.pos} rotation={props.rot} scale={props.sca}>
                     <HolographicMaterial hologramBrightness={ 0.42 } />
                 </mesh>
             </a.group>
