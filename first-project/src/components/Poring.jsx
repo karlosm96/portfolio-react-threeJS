@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef } from "react";
+import React, { useLayoutEffect, useRef, useMemo } from "react";
 import { useGLTF, useScroll } from "@react-three/drei";
 import { a } from '@react-spring/three';
 import { useFrame } from "@react-three/fiber"; 
@@ -14,11 +14,15 @@ export default function Poring(...props){
     const timeLine = useRef();
 
     const [ scale, position ] = props; 
-    const { nodes, materials } = useGLTF(GLtfDir);
+    const { nodes, materials } = useMemo(() =>{
+      return useGLTF(GLtfDir);
+    });
 
     const scrollControll = useScroll();
     const preliminar_sheet = useCurrentSheet();
-    const sequenceLength = val(preliminar_sheet.sequence.pointer.length);
+    const sequenceLength = useMemo(() =>{
+      return val(preliminar_sheet.sequence.pointer.length);
+    });
 
     // Set in the current poring timeline the starting position
     // (Calculate the start position: offset wheel * main sheet lenght)

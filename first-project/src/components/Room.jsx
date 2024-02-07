@@ -1,28 +1,26 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
+import React, { useEffect, useLayoutEffect, useRef, useState, useMemo } from "react";
 import { useGLTF, useVideoTexture } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { useScroll } from "@react-three/drei";
 import { val } from '@theatre/core'
 import { a } from '@react-spring/three';
 import { useCurrentSheet } from '@theatre/r3f';
-
 import gsap from 'gsap';
 
 import room from '../assets/models/room.glb'
-import Book from "./Book";
-import Poring from "./Poring";
+import Book from "./Book.jsx";
+import Poring from "./Poring.jsx";
+import ClickPointer from "./ClickPointer.jsx";
 import PoringVid from '../assets/videos/poring.mp4';
 
 export function Room( {scale, position} ) {
 
   const refRoom = useRef();
-  const model = useGLTF(room);
-  const { nodes, materials } = useGLTF(room);
-
+  const { nodes, materials } = useMemo(() =>{ return useGLTF(room); });
   const scrollControll = useScroll();
   const timeLine = useRef();
   const currentSheet = useCurrentSheet();
-  const sequenceLength = val(currentSheet.sequence.pointer.length);
+  const sequenceLength = useMemo(() =>{ return val(currentSheet.sequence.pointer.length); });
 
   useFrame(()=>{
     timeLine.current.seek(scrollControll.offset * sequenceLength);
@@ -46,7 +44,13 @@ export function Room( {scale, position} ) {
   const defaultPositionCards = {
     miDulceOnline : [-7.39, 14.587, -48.526],
     gameOfLife : [ -3.054, 14.587, -48.526],
-    sortedProject : [ 1.311, 14.587, -48.526]
+    sortedProject : [ 1.311, 14.587, -48.526],
+    pointerCardmiDulceOnline: [-7.348, 15.762, -48.286],
+    pointerCardgameOfLife: [-3.038, 15.762, -48.286],
+    pointerCardsortedProject: [1.281, 15.762, -48.286],
+    basePointerCardmiDulceOnline: [-7.371, 11.168, -48.539],
+    basePointerCardgameOfLife: [-3.044, 11.168, -48.539],
+    basePointerCardsortedProject: [1.161, 11.168, -48.539]
   };
 
   const [hovered, setHovered] = useState(false);
@@ -61,10 +65,14 @@ export function Room( {scale, position} ) {
   function hoverEffect(condition, cardName){
     if(condition){
       defaultPositionCards[cardName][2] = -48.526 + 2;
+      defaultPositionCards[`pointerCard${cardName}`][2] = -48.286 + 2;
+      defaultPositionCards[`basePointerCard${cardName}`][2] = -48.539 + 2;
       setPotionCard(defaultPositionCards);
     } else{
       if(cardName!=''){
         defaultPositionCards[cardName][2] = -48.526;
+        defaultPositionCards[`pointerCard${cardName}`][2] = -48.286;
+        defaultPositionCards[`basePointerCard${cardName}`][2] = -48.539;
         setPotionCard(defaultPositionCards);
       }
     }
@@ -713,6 +721,7 @@ export function Room( {scale, position} ) {
       <mesh geometry={nodes.cristal001.geometry} material={materials.Glass} position={[-2.033, 0.783, 2.56]} rotation={[0, 1.562, 0]} scale={[6.088, 0.038, 6.088]} />
       <mesh geometry={nodes.roof.geometry} material={materials.blanco} position={[5.439, 23.029, -12.409]} scale={[33.913, 0.569, 38.904]} />
 
+      <ClickPointer positionPointer={ positionCard.pointerCardmiDulceOnline } positionBasePointer={ positionCard.basePointerCardmiDulceOnline }></ClickPointer>
       <a.group 
         onPointerEnter={ (e)=>{setHovered(true); setCardName('miDulceOnline')} } 
         onPointerLeave={ (e)=>{setHovered(false); setCardName('miDulceOnline')} } 
@@ -729,6 +738,7 @@ export function Room( {scale, position} ) {
         <mesh geometry={nodes.Cylinder071_8.geometry} material={materials.blanco} />
       </a.group>
 
+      <ClickPointer positionPointer={ positionCard.pointerCardgameOfLife } positionBasePointer={ positionCard.basePointerCardgameOfLife }></ClickPointer>
       <a.group 
         onPointerEnter={ (e)=>{setHovered(true); setCardName('gameOfLife');} } 
         onPointerLeave={ (e)=>{setHovered(false); setCardName('gameOfLife');} } 
@@ -742,6 +752,7 @@ export function Room( {scale, position} ) {
         <mesh geometry={nodes.Cylinder073_5.geometry} material={materials.border_card} />
       </a.group>
 
+      <ClickPointer positionPointer={ positionCard.pointerCardsortedProject } positionBasePointer={ positionCard.basePointerCardsortedProject }></ClickPointer>
       <a.group 
         onPointerEnter={ (e)=>{setHovered(true); setCardName('sortedProject');} } 
         onPointerLeave={ (e)=>{setHovered(false); setCardName('sortedProject');} } 

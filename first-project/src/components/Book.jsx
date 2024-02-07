@@ -1,14 +1,14 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
+import React, { useEffect, useLayoutEffect, useRef, useState, useMemo } from "react";
 import { useGLTF, useAnimations } from "@react-three/drei";
 import { a } from '@react-spring/three';
 
 import {initialStatesAnimations, activateAnimation, resumePausedAnimation} from "../extra_functions/handleAnimations";
-import Hand from './Hand';
+import Hand from './Hand.jsx';
 import GLtfDir from '../assets/models/book_anim.glb';
 
 export default function Book(...props){
     const bookRef = useRef();
-    const { nodes, materials, animations } = useGLTF(GLtfDir);
+    const { nodes, materials, animations } = useMemo(() =>{ return useGLTF(GLtfDir); });
     const { actions, names } = useAnimations(animations, bookRef);
     const [ initAnimation, setInitAnimation ] = useState(false);
     const [hovered, setHovered] = useState(false);
@@ -19,20 +19,17 @@ export default function Book(...props){
         initialStatesAnimations(names, actions, true, 1);
     }, [])
 
+    // Pointer hover effect
     useEffect(() => {
         document.body.style.cursor = hovered ? 'pointer' : 'auto';
     }, [hovered])
 
     //Activate - Desactivate animations
     useEffect(() =>{
-        document.body.style.cursor = hovered ? 'pointer' : 'auto';
-
         activateAnimation(names, actions, 0, initAnimation);
             setTimeout(() =>{
                 resumePausedAnimation(names, actions, true);
             }, 20000)
-            
-
       }, [initAnimation])
     
     return (

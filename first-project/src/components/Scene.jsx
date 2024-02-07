@@ -5,8 +5,8 @@ import { getProject, val } from '@theatre/core'
 import { OrbitControls, ScrollControls, useScroll } from "@react-three/drei";
 import { SheetProvider, PerspectiveCamera, useCurrentSheet } from '@theatre/r3f';
 
-import Room from './Room';
-import Loader from "./Loader";
+import Room from './Room.jsx';
+import Loader from "./Loader.jsx";
 import '../styles/home.css';
 import cameraMoveState from '../assets/camera/camera_mov.json';
 

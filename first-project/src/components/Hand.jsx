@@ -11,16 +11,14 @@ import Hand from '../assets/models/hand.glb';
 
 
 export default function Model(props) {
-    const { nodes, materials } = useGLTF(Hand);
+    const { nodes } = useMemo(() =>{ return useGLTF(Hand); });
 
     const timeLine = useRef();
     const generalTimeLine = useRef();
     const currentSheet = useCurrentSheet();
     const scrollControll = useScroll();
 
-    const sequenceLength = useMemo(() =>{
-        return val(currentSheet.sequence.pointer.length);
-    })
+    const sequenceLength = useMemo(() =>{ return val(currentSheet.sequence.pointer.length); });
 
     useFrame(()=>{
         timeLine.current.seek(sequenceLength * scrollControll.offset);
@@ -64,7 +62,7 @@ export default function Model(props) {
 
     return (
         props.activateHand 
-            ? activateHand() 
+            ? activateHand()
             : <></>
     )
 }
