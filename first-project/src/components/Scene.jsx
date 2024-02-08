@@ -84,8 +84,7 @@ function SceneConfiguration({ canvasSize }){
         </>
     )
 }
-//<Perf />
-//<directionalLight position={ [1, 1, 1] } intensity={ 2 } />
+
 /*
 <PerspectiveCamera theatreKey='Camera' makeDefault position={ [0, 0, 0] } fov={ 90 } near={ 0.1 } far={ 70 } />
             <directionalLight position={ [-3, -1, 1] } intensity={ 3 } color={ '#fff8b6' } />

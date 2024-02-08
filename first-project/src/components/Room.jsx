@@ -12,6 +12,7 @@ import Book from "./Book.jsx";
 import Poring from "./Poring.jsx";
 import ClickPointer from "./ClickPointer.jsx";
 import PoringVid from '../assets/videos/poring.mp4';
+import Phone from "./Phone.jsx";
 
 export function Room( {scale, position} ) {
 
@@ -45,9 +46,9 @@ export function Room( {scale, position} ) {
     miDulceOnline : [-7.39, 14.587, -48.526],
     gameOfLife : [ -3.054, 14.587, -48.526],
     sortedProject : [ 1.311, 14.587, -48.526],
-    pointerCardmiDulceOnline: [-7.348, 15.762, -48.286],
-    pointerCardgameOfLife: [-3.038, 15.762, -48.286],
-    pointerCardsortedProject: [1.281, 15.762, -48.286],
+    pointerCardmiDulceOnline: [-7.348, 15.2, -48.286],
+    pointerCardgameOfLife: [-3.038, 15.2, -48.286],
+    pointerCardsortedProject: [1.281, 15.2, -48.286],
     basePointerCardmiDulceOnline: [-7.371, 11.168, -48.539],
     basePointerCardgameOfLife: [-3.044, 11.168, -48.539],
     basePointerCardsortedProject: [1.161, 11.168, -48.539]
@@ -55,7 +56,7 @@ export function Room( {scale, position} ) {
 
   const [hovered, setHovered] = useState(false);
   const [cardName, setCardName ] = useState('');
-  const [positionCard, setPotionCard] = useState(defaultPositionCards);
+  const [positionCard, setPositionCard] = useState(defaultPositionCards);
 
   useEffect(() => {
     document.body.style.cursor = hovered ? 'pointer' : 'auto';
@@ -67,13 +68,13 @@ export function Room( {scale, position} ) {
       defaultPositionCards[cardName][2] = -48.526 + 2;
       defaultPositionCards[`pointerCard${cardName}`][2] = -48.286 + 2;
       defaultPositionCards[`basePointerCard${cardName}`][2] = -48.539 + 2;
-      setPotionCard(defaultPositionCards);
+      setPositionCard(defaultPositionCards);
     } else{
       if(cardName!=''){
         defaultPositionCards[cardName][2] = -48.526;
         defaultPositionCards[`pointerCard${cardName}`][2] = -48.286;
         defaultPositionCards[`basePointerCard${cardName}`][2] = -48.539;
-        setPotionCard(defaultPositionCards);
+        setPositionCard(defaultPositionCards);
       }
     }
   }
@@ -721,7 +722,7 @@ export function Room( {scale, position} ) {
       <mesh geometry={nodes.cristal001.geometry} material={materials.Glass} position={[-2.033, 0.783, 2.56]} rotation={[0, 1.562, 0]} scale={[6.088, 0.038, 6.088]} />
       <mesh geometry={nodes.roof.geometry} material={materials.blanco} position={[5.439, 23.029, -12.409]} scale={[33.913, 0.569, 38.904]} />
 
-      <ClickPointer positionPointer={ positionCard.pointerCardmiDulceOnline } positionBasePointer={ positionCard.basePointerCardmiDulceOnline }></ClickPointer>
+      <ClickPointer mat={materials.pin} positionPointer={ positionCard.pointerCardmiDulceOnline } positionBasePointer={ positionCard.basePointerCardmiDulceOnline }></ClickPointer>
       <a.group 
         onPointerEnter={ (e)=>{setHovered(true); setCardName('miDulceOnline')} } 
         onPointerLeave={ (e)=>{setHovered(false); setCardName('miDulceOnline')} } 
@@ -738,7 +739,7 @@ export function Room( {scale, position} ) {
         <mesh geometry={nodes.Cylinder071_8.geometry} material={materials.blanco} />
       </a.group>
 
-      <ClickPointer positionPointer={ positionCard.pointerCardgameOfLife } positionBasePointer={ positionCard.basePointerCardgameOfLife }></ClickPointer>
+      <ClickPointer mat={materials.pin} positionPointer={ positionCard.pointerCardgameOfLife } positionBasePointer={ positionCard.basePointerCardgameOfLife }></ClickPointer>
       <a.group 
         onPointerEnter={ (e)=>{setHovered(true); setCardName('gameOfLife');} } 
         onPointerLeave={ (e)=>{setHovered(false); setCardName('gameOfLife');} } 
@@ -752,7 +753,7 @@ export function Room( {scale, position} ) {
         <mesh geometry={nodes.Cylinder073_5.geometry} material={materials.border_card} />
       </a.group>
 
-      <ClickPointer positionPointer={ positionCard.pointerCardsortedProject } positionBasePointer={ positionCard.basePointerCardsortedProject }></ClickPointer>
+      <ClickPointer mat={materials.pin} positionPointer={ positionCard.pointerCardsortedProject } positionBasePointer={ positionCard.basePointerCardsortedProject }></ClickPointer>
       <a.group 
         onPointerEnter={ (e)=>{setHovered(true); setCardName('sortedProject');} } 
         onPointerLeave={ (e)=>{setHovered(false); setCardName('sortedProject');} } 
@@ -856,11 +857,8 @@ export function Room( {scale, position} ) {
         <mesh geometry={nodes.Cube036_1.geometry} material={materials.wood_1} />
         <mesh geometry={nodes.Cube036_2.geometry} material={materials.ramon_3} />
       </a.group>
-      <mesh geometry={nodes.phonescreen.geometry} material={materials.phone_crow} position={[34.638, 6.342, 3.376]} rotation={[Math.PI, -1.126, Math.PI]} scale={[0.894, 0.169, 1.673]} />
-      <mesh geometry={nodes.phonecamera.geometry} material={materials.camera} position={[35.922, 6.646, 4.213]} rotation={[Math.PI, -1.126, Math.PI]} scale={[0.701, 0.133, 1.314]} />
-      <mesh geometry={nodes.phonebackcamera.geometry} material={materials.back_camera} position={[34.707, 6.268, 3.42]} rotation={[Math.PI, -1.129, Math.PI]} scale={[0.894, 0.169, 1.673]} />
-      <mesh geometry={nodes.linkedinscreen.geometry} material={materials.linkedin} position={[34.788, 6.403, 3.448]} rotation={[Math.PI, -1.126, Math.PI]} scale={[0.646, 0.137, 0.489]} />
-      <mesh geometry={nodes.outlookscreen.geometry} material={materials.outlook} position={[33.861, 6.403, 3.006]} rotation={[Math.PI, -1.126, Math.PI]} scale={[0.648, 0.137, 0.491]} />
+      
+      <Phone></Phone>
       <mesh geometry={nodes.mattress.geometry} material={materials.GREY} position={[-2.324, -1.248, 18.285]} rotation={[0, 1.557, 0]} scale={[4.756, 0.909, 14.239]} />
       <mesh geometry={nodes.pillow_1.geometry} material={materials.GREY} position={[5.317, 3.287, 21.176]} rotation={[0, 1.557, 1.971]} scale={[3.997, 2.9, 8.227]} />
       <mesh geometry={nodes.pillow_2.geometry} material={materials.GREY} position={[-9.388, 3.443, 21.257]} rotation={[0, 1.557, 1.971]} scale={[3.98, 2.535, 7.316]} />

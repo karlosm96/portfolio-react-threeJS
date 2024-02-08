@@ -33,14 +33,12 @@ export default function ClickPointer(props) {
             y: pointerRef.current.rotation.y * Math.PI * 4,
             duration: 0.2
         },
-        
     )
   }, [props.pos])
 
   return (   
     <a.group {...props} dispose={null}>
-        <mesh ref={ pointerRef } geometry={nodes.pointer.geometry} material={nodes.pointer.material} position={ props.positionPointer } rotation={[0, 0.129, -Math.PI / 2]} scale={[-0.189, -0.188, -0.128]}>
-            <HolographicMaterial hologramBrightness={ 0.54 } fresnelAmount={ 0.45 } fresnelOpacity={ 0.2 } hologramColor={ '#f0071e' }/>
+        <mesh ref={ pointerRef } geometry={nodes.pointer.geometry} material={props.mat} position={ props.positionPointer } rotation={[0, 0.129, -Math.PI / 2]} scale={[-0.189, -0.188, -0.128]}>
         </mesh>
         <a.group position={props.positionBasePointer} rotation={[Math.PI / 2, -0.129, Math.PI / 2]} scale={0.092}>
         <mesh geometry={nodes.Plane019.geometry} material={materials.black} />
