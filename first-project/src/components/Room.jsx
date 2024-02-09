@@ -1,10 +1,11 @@
 import React, { useEffect, useLayoutEffect, useRef, useState, useMemo } from "react";
-import { useGLTF, useVideoTexture } from "@react-three/drei";
+import { Html, useGLTF, useVideoTexture } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { useScroll } from "@react-three/drei";
 import { val } from '@theatre/core'
 import { a } from '@react-spring/three';
 import { useCurrentSheet } from '@theatre/r3f';
+import { useStateContext } from "./Home.jsx";
 import gsap from 'gsap';
 
 import room from '../assets/models/room.glb'
@@ -13,15 +14,22 @@ import Poring from "./Poring.jsx";
 import ClickPointer from "./ClickPointer.jsx";
 import PoringVid from '../assets/videos/poring.mp4';
 import Phone from "./Phone.jsx";
+import Projects from "./Projects.jsx";
+
 
 export function Room( {scale, position} ) {
 
   const refRoom = useRef();
   const { nodes, materials } = useMemo(() =>{ return useGLTF(room); });
+
+  // Animation variables
   const scrollControll = useScroll();
   const timeLine = useRef();
   const currentSheet = useCurrentSheet();
   const sequenceLength = useMemo(() =>{ return val(currentSheet.sequence.pointer.length); });
+
+  // Context Variables
+  const { state, setState } = useStateContext();
 
   useFrame(()=>{
     timeLine.current.seek(scrollControll.offset * sequenceLength);
@@ -77,6 +85,12 @@ export function Room( {scale, position} ) {
         setPositionCard(defaultPositionCards);
       }
     }
+  }
+
+  function displayProject(projectInfo){
+    setState({
+      activateState: true
+    })
   }
 
   return (
@@ -742,7 +756,8 @@ export function Room( {scale, position} ) {
       <ClickPointer mat={materials.pin} positionPointer={ positionCard.pointerCardgameOfLife } positionBasePointer={ positionCard.basePointerCardgameOfLife }></ClickPointer>
       <a.group 
         onPointerEnter={ (e)=>{setHovered(true); setCardName('gameOfLife');} } 
-        onPointerLeave={ (e)=>{setHovered(false); setCardName('gameOfLife');} } 
+        onPointerLeave={ (e)=>{setHovered(false); setCardName('gameOfLife');} }
+        onClick={ (e) =>{ displayProject(25) } } 
         position={ positionCard.gameOfLife } 
         rotation={[1.566, 0, 0]} scale={0.929}>
         <mesh geometry={nodes.Cylinder073.geometry} material={materials.pin} />

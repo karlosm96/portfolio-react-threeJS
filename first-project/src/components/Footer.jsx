@@ -15,9 +15,6 @@ export default function Footer( {activation, action} ){
 }
 
 /**
- * const scrollFooter = document.getElementById("scroll-footer");
-    const clickFooter = document.getElementById("click-footer");
- * 
  * <div id="click-footer" className="hidden">
                     <div id="flex-click-footer">
                         <div id="click-animation">

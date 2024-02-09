@@ -8,7 +8,6 @@ import { val } from '@theatre/core'
 import gsap from 'gsap';
 
 import GLTF from '../assets/models/click_pointer.glb'
-import HolographicMaterial from '../extra_functions/HolographicMaterial.jsx';
 
 export default function ClickPointer(props) {
   const { nodes, materials } = useMemo(() => { return useGLTF(GLTF); });

@@ -9,6 +9,7 @@ import Room from './Room.jsx';
 import Loader from "./Loader.jsx";
 import '../styles/home.css';
 import cameraMoveState from '../assets/camera/camera_mov.json';
+import Projects from "./Projects.jsx";
 
 export default function Scene(){
     const sheet = getProject('preliminar name', { state: cameraMoveState }).sheet('Scene');
@@ -43,7 +44,7 @@ export default function Scene(){
 
     return(
         <section>
-            <Canvas className="section-canvas"
+            <Canvas className="section-canvas" id="section-canvas"
                 gl={{ preserveDrawingBuffer: true }}
                 frameloop="demand">
                 <Suspense fallback={ <Loader /> }>
@@ -55,6 +56,7 @@ export default function Scene(){
                     </ScrollControls>
                 </Suspense>
             </Canvas>
+            <Projects />
         </section>
     )
 }

@@ -21,18 +21,36 @@ body{
   height: 100dvh;
   justify-content: center;
   align-content: center;
+  position: relative;
+  display: flex;
 }
 
-section{
+#section-canvas{
   min-width: 100%;
   position: relative;
   background-image:url('./assets/img/sunset_2.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+  position: absolute;
+  opacity: 1;
+}
+
+#section-projects{
+  position: absolute;
+  background-color: blue;
+  
+  width: 800px;
+  height: 800px;
+  top: 200%;
+  opacity: 1;
 }
 
 .hidden{
   display: none;
+}
+
+.show{
+  display: flex;
 }
 
 /*-------------
