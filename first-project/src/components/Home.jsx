@@ -11,15 +11,13 @@ import Projects from "./Projects.jsx";
 const StateContext = createContext();
 
 const StateProvider = ({ children })=> {
-    const [state, setState] = useState({
-        activateState: false,
-        projectName: ''
+    const [contextState, setContextState] = useState({
+        activationState: true, //change in the end to false
+        projectName: 'gameOfLife' // empty
     });
 
-    console.log(state);
-
     return(
-        <StateContext.Provider value={ {state, setState} }>
+        <StateContext.Provider value={ {contextState, setContextState} }>
             {children}
         </StateContext.Provider>
     )

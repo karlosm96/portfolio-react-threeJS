@@ -29,7 +29,7 @@ export function Room( {scale, position} ) {
   const sequenceLength = useMemo(() =>{ return val(currentSheet.sequence.pointer.length); });
 
   // Context Variables
-  const { state, setState } = useStateContext();
+  const { contextState, setContextState } = useStateContext();
 
   useFrame(()=>{
     timeLine.current.seek(scrollControll.offset * sequenceLength);
@@ -88,8 +88,9 @@ export function Room( {scale, position} ) {
   }
 
   function displayProject(projectInfo){
-    setState({
-      activateState: true
+    setContextState({
+      activationState: true,
+      name: ""
     })
   }
 
@@ -757,7 +758,7 @@ export function Room( {scale, position} ) {
       <a.group 
         onPointerEnter={ (e)=>{setHovered(true); setCardName('gameOfLife');} } 
         onPointerLeave={ (e)=>{setHovered(false); setCardName('gameOfLife');} }
-        onClick={ (e) =>{ displayProject(25) } } 
+        onClick={ (e) =>{ displayProject('gameOfLife') } } 
         position={ positionCard.gameOfLife } 
         rotation={[1.566, 0, 0]} scale={0.929}>
         <mesh geometry={nodes.Cylinder073.geometry} material={materials.pin} />

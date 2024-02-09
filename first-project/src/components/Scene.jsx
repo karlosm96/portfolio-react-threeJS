@@ -8,8 +8,7 @@ import { SheetProvider, PerspectiveCamera, useCurrentSheet } from '@theatre/r3f'
 import Room from './Room.jsx';
 import Loader from "./Loader.jsx";
 import '../styles/home.css';
-import cameraMoveState from '../assets/camera/camera_mov.json';
-import Projects from "./Projects.jsx";
+import cameraMoveState from '../assets/projectData/camera_mov.json';
 
 export default function Scene(){
     const sheet = getProject('preliminar name', { state: cameraMoveState }).sheet('Scene');
@@ -56,7 +55,6 @@ export default function Scene(){
                     </ScrollControls>
                 </Suspense>
             </Canvas>
-            <Projects />
         </section>
     )
 }
