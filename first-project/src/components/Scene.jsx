@@ -1,10 +1,11 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Suspense } from "react";
 import { getProject, val } from '@theatre/core'
 import { OrbitControls, ScrollControls, useScroll } from "@react-three/drei";
 import { SheetProvider, PerspectiveCamera, useCurrentSheet } from '@theatre/r3f';
 
+import { useStateContext } from "./Home.jsx";
 import Room from './Room.jsx';
 import Loader from "./Loader.jsx";
 import '../styles/home.css';
@@ -13,7 +14,8 @@ import cameraMoveState from '../assets/projectData/camera_mov.json';
 export default function Scene(){
     const sheet = getProject('preliminar name', { state: cameraMoveState }).sheet('Scene');
     const [canvasSize, setCanvasSize] = useState({ width: window.innerWidth, height: window.innerHeight });
-
+    const {contextState, setContextState} = useStateContext();
+    
     useEffect(() =>{
         // Responsive section
         const handleResize = () => {
@@ -43,11 +45,12 @@ export default function Scene(){
 
     return(
         <section>
-            <Canvas className="section-canvas" id="section-canvas"
+            <Canvas className="section-canvas" id="section-canvas" 
+                style={{filter: contextState['activationState'] ? 'blur(5px)' : 'none'}}
                 gl={{ preserveDrawingBuffer: true }}
                 frameloop="demand">
                 <Suspense fallback={ <Loader /> }>
-                    <ScrollControls pages={ 5 } damping={ 1 }>
+                    <ScrollControls pages={ 5 } damping={ 1 } >
                         <SheetProvider sheet={ sheet }>
                             <SceneConfiguration canvasSize={ canvasSize } />
                             <Room scale={ roomScale } position={ roomPosition } />
@@ -65,9 +68,9 @@ function SceneConfiguration({ canvasSize }){
 
     const aspect = canvasSize.width / canvasSize.height;
     const camera = useRef();
+    const sequenceLength = useMemo(()=>{ return val(preliminar_sheet.sequence.pointer.length); }) ;
 
     useFrame(() =>{
-        const sequenceLength = val(preliminar_sheet.sequence.pointer.length);
         preliminar_sheet.sequence.position = scroll.offset * sequenceLength;
     })
 

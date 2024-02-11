@@ -1,8 +1,11 @@
+import { useStateContext } from "./Home";
+
 export default function Footer( {activation, action} ){
+    const {contextState, setContextState} = useStateContext();
 
     return(
         <>
-            <footer id="footer" className="hidden">
+            <footer id="footer" className="hidden" style={{opacity: contextState['activationState'] ? 0 : 1}}>
                 <div id="scroll-footer">
                     <div id="flex-scroll-footer">
                         <div className='icon-scroll' />

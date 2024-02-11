@@ -9,9 +9,9 @@
     "gameOfLife":{
         "name": "Game of life",
         "video": "",
-        "about": "I made a model of the 'Game of Life' using Python and the Pygame library. This project helped me to learn and understand the object oriented programming paradigm.",
-        "url": "https://carlosluddwingportfolio.onrender.com/",
-        "skills": []
+        "about": "Model of the 'Game of Life' using Python and the Pygame library. This project helped me to learn and understand the object oriented programming paradigm.",
+        "url": "https://github.com/karlosm96/Project_GameOfLife/tree/main",
+        "skills": ["src/assets/img/python.png", "src/assets/img/pygame.png"]
     },
     "sortedProject":{
         "name": "Sorted Project",

@@ -12,8 +12,8 @@ const StateContext = createContext();
 
 const StateProvider = ({ children })=> {
     const [contextState, setContextState] = useState({
-        activationState: true, //change in the end to false
-        projectName: 'gameOfLife' // empty
+        activationState: false, //change in the end to false
+        projectName: '' // empty
     });
 
     return(

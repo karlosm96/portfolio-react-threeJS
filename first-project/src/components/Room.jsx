@@ -87,10 +87,10 @@ export function Room( {scale, position} ) {
     }
   }
 
-  function displayProject(projectInfo){
+  function displayProject(projectName){
     setContextState({
       activationState: true,
-      name: ""
+      projectName: projectName
     })
   }
 
@@ -741,6 +741,7 @@ export function Room( {scale, position} ) {
       <a.group 
         onPointerEnter={ (e)=>{setHovered(true); setCardName('miDulceOnline')} } 
         onPointerLeave={ (e)=>{setHovered(false); setCardName('miDulceOnline')} } 
+        onClick={ (e) =>{ displayProject('miDulceOnline') } } 
         position={ positionCard.miDulceOnline } 
         rotation={[1.566, 0, 0]} scale={0.929}>
         <mesh geometry={nodes.Cylinder071.geometry} material={materials.pin} />
@@ -772,7 +773,8 @@ export function Room( {scale, position} ) {
       <ClickPointer mat={materials.pin} positionPointer={ positionCard.pointerCardsortedProject } positionBasePointer={ positionCard.basePointerCardsortedProject }></ClickPointer>
       <a.group 
         onPointerEnter={ (e)=>{setHovered(true); setCardName('sortedProject');} } 
-        onPointerLeave={ (e)=>{setHovered(false); setCardName('sortedProject');} } 
+        onPointerLeave={ (e)=>{setHovered(false); setCardName('sortedProject');} }
+        onClick={ (e) =>{ displayProject('sortedProject') } } 
         position={ positionCard.sortedProject } 
         rotation={[1.566, 0, 0]} scale={0.929}>
         <mesh geometry={nodes.Cylinder074.geometry} material={materials.pin} />
