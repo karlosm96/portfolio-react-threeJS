@@ -16,6 +16,7 @@ body{
   height: 100dvh;
   margin: 0;
   padding: 0;
+  background-color: #939495;
 }
 
 h1, h2, h5{
@@ -58,6 +59,44 @@ h1, h2, h5{
   height: 80dvh;
   padding: 1.5rem;
   border-radius: 5px;
+}
+
+#button-container-projects{
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: flex-end;
+  background-color: transparent;
+}
+
+#button-projects{
+  background-color: transparent;
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 5px;
+  display: flex;
+  margin-top: -1.4rem;
+  margin-right: -1.4rem;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  box-shadow: none;
+  border: 0;
+}
+
+#button-p{
+  transform: rotateZ(45deg);
+}
+
+#button-p::before { 
+  font-size: 1rem;
+  text-decoration: none;
+  content: "\2716"; 
+  
+}
+
+#button-p:hover{
+  transform: rotateZ(90deg);
 }
 
 #project-video {
@@ -124,13 +163,14 @@ h5, p {
 h1{
   width: 100%;
   display: flex;
+  word-wrap: break-word;
 }
 
 @media screen and (max-width: 768px) {
   #section-projects {
     width: 90dvw;
-    height: 80dvh;
-    top: 10%;
+    height: fit-content;
+    top: 5%;
   }
 
   #project-video {
@@ -144,8 +184,8 @@ h1{
   }
 
   .skill-tech {
-    min-width: 100px;
-    min-height: 100px;
+    min-width: 80px;
+    min-height: 80px;
   }
 }
 /*-------------

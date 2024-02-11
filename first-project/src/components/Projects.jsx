@@ -8,9 +8,19 @@ export default function Projects(props){
     const activactionState = contextState['activationState'];
     const projectInfo = activactionState ? projectsInfo[contextState['projectName']] : null;
 
+    function closeProject(){
+        setContextState({
+            activationState: false,
+            projectName: ""
+          })
+    }
+
     function displayProject(){
         return(
             <section id="section-projects" className="">
+                <div id="button-container-projects">
+                    <button id="button-projects" onClick={ (e) =>{ closeProject(); } }i><p id='button-p'></p></button>
+                </div>
                 <video id="project-video"></video>
                 <div id="description-container">
                     <h1 id="project-name">{projectInfo['name']}</h1>
@@ -19,7 +29,7 @@ export default function Projects(props){
                 <div id="project-technologies">
                     {projectInfo['skills'].map((element, index) => {
                     return(
-                        <img key={index} className="skill-tech" src={element} alt="" /> 
+                        <img key={index} className="skill-tech" src={`src/assets/img/${element}`} alt="" /> 
                       )
                     })}
                 </div>
