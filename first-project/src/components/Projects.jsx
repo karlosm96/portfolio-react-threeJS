@@ -1,6 +1,5 @@
 import { useStateContext } from './Home';
 import projectsInfo from '../assets/projectData/projects_info.json';
-import { useEffect } from 'react';
 
 export default function Projects(props){
 
@@ -9,6 +8,7 @@ export default function Projects(props){
     const projectInfo = activactionState ? projectsInfo[contextState['projectName']] : null;
 
     function closeProject(){
+        // Restart context variables
         setContextState({
             activationState: false,
             projectName: ""
@@ -35,10 +35,8 @@ export default function Projects(props){
                 </div>
             </section>
         )
-        
     }
 
-    // change the return
     return(
         <>
             {activactionState ? displayProject() : null} 

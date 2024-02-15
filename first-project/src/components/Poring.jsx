@@ -20,9 +20,7 @@ export default function Poring(...props){
 
     const scrollControll = useScroll();
     const preliminar_sheet = useCurrentSheet();
-    const sequenceLength = useMemo(() =>{
-      return val(preliminar_sheet.sequence.pointer.length);
-    });
+    const sequenceLength = useMemo(() =>{ return val(preliminar_sheet.sequence.pointer.length); });
 
     // Set in the current poring timeline the starting position
     // (Calculate the start position: offset wheel * main sheet lenght)
@@ -333,7 +331,7 @@ export default function Poring(...props){
     }, [])
 
     return(
-      <a.group {...props}>
+      <a.group>
           <a.group ref={poringRef} name="poringwelcome" position={[-0.69, 0.265, 3.275]} rotation={[0, 1.039, 0.001]} scale={0.014} >
             <mesh name="poring_=3" geometry={nodes['poring_=3'].geometry} material={materials.marin} />
             <mesh name="poring_=3_1" geometry={nodes['poring_=3_1'].geometry} material={materials.back_pack} />

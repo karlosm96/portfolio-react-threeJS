@@ -1,4 +1,4 @@
-import React, { createContext, useState, useContext } from 'react';
+import React, { createContext, useState, useContext, useEffect} from 'react';
 
 import '../styles/home.css';
 
@@ -27,10 +27,26 @@ export const useStateContext = () => useContext(StateContext);
 
 export default function Home(){
 
+    const [progress, setProgress] = useState(0);
+
+    console.log(progress);
+    // Simula la carga de recursos (puedes adaptarlo a tu lógica real)
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setProgress(prevProgress => {
+                if (prevProgress < 100) {
+                    return prevProgress + 10;
+                }
+                clearInterval(timer);
+                return 100;
+            });
+        }, 400);
+    }, []);
+
     return(
         <Fragment>
             <StateProvider>
-                <Scene />
+                <Scene progress={progress} />
                 <Projects />
                 <Footer />
             </StateProvider>

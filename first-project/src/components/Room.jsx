@@ -1,5 +1,5 @@
 import React, { useEffect, useLayoutEffect, useRef, useState, useMemo } from "react";
-import { Html, useGLTF, useVideoTexture } from "@react-three/drei";
+import { useGLTF, useVideoTexture } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { useScroll } from "@react-three/drei";
 import { val } from '@theatre/core'
@@ -14,7 +14,6 @@ import Poring from "./Poring.jsx";
 import ClickPointer from "./ClickPointer.jsx";
 import PoringVid from '../assets/videos/poring.mp4';
 import Phone from "./Phone.jsx";
-import Projects from "./Projects.jsx";
 
 
 export function Room( {scale, position} ) {
@@ -733,7 +732,7 @@ export function Room( {scale, position} ) {
       <mesh geometry={nodes.gab002.geometry} material={materials.cabinet} position={[34.759, -0.37, -5.694]} rotation={[0, -1.554, 0]} scale={[1.346, 1.793, 2.201]} />
       <mesh geometry={nodes.frames.geometry} material={materials.blanco} position={[39.694, -4.173, -12.167]} scale={[0.901, 0.901, 38.811]} />
       <mesh geometry={nodes.wall.geometry} material={materials.wall} position={[39.694, -4.173, -12.167]} scale={[0.901, 0.901, 38.811]} />
-      <mesh geometry={nodes.windows.geometry} material={materials.Glass} position={[-28.934, 8.758, -12.167]} rotation={[-Math.PI, 0, 0]} scale={[0.901, 0.901, 38.811]} />
+      <mesh geometry={nodes.windows.geometry} material={materials.Glass} position={[-28.934, 8.758, -12.167]} rotation={[-Math.PI, 0, 0]} scale={[0.901, 0.901, 38.811]} receiveShadow/>
       <mesh geometry={nodes.cristal001.geometry} material={materials.Glass} position={[-2.033, 0.783, 2.56]} rotation={[0, 1.562, 0]} scale={[6.088, 0.038, 6.088]} />
       <mesh geometry={nodes.roof.geometry} material={materials.blanco} position={[5.439, 23.029, -12.409]} scale={[33.913, 0.569, 38.904]} />
 

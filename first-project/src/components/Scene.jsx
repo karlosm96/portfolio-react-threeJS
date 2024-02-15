@@ -2,8 +2,9 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Suspense } from "react";
 import { getProject, val } from '@theatre/core'
-import { OrbitControls, ScrollControls, useScroll } from "@react-three/drei";
+import { OrbitControls, ScrollControls, Sphere, useScroll, useGLTF } from "@react-three/drei";
 import { SheetProvider, PerspectiveCamera, useCurrentSheet } from '@theatre/r3f';
+
 
 import { useStateContext } from "./Home.jsx";
 import Room from './Room.jsx';
@@ -11,7 +12,7 @@ import Loader from "./Loader.jsx";
 import '../styles/home.css';
 import cameraMoveState from '../assets/projectData/camera_mov.json';
 
-export default function Scene(){
+export default function Scene(props){
     const sheet = getProject('preliminar name', { state: cameraMoveState }).sheet('Scene');
     const [canvasSize, setCanvasSize] = useState({ width: window.innerWidth, height: window.innerHeight });
     const {contextState, setContextState} = useStateContext();
@@ -34,7 +35,7 @@ export default function Scene(){
         let screenPosition = [ isMobile ? 0 : 0.5, isMobile ? -width : -6.5, -43];
         
         if(width < 765){
-            screeScale = [0.9, 0.9, 0.9];
+            screeScale = [0.8, 0.8, 0.8];
         } else{
             screeScale = [0.1, 0.1, 0.1];
         }
@@ -49,7 +50,7 @@ export default function Scene(){
                 style={{filter: contextState['activationState'] ? 'blur(5px)' : 'none'}}
                 gl={{ preserveDrawingBuffer: true }}
                 frameloop="demand">
-                <Suspense fallback={ <Loader /> }>
+                <Suspense fallback={ <Loader progress={props.progress} /> }>
                     <ScrollControls pages={ 5 } damping={ 1 } >
                         <SheetProvider sheet={ sheet }>
                             <SceneConfiguration canvasSize={ canvasSize } />
@@ -76,13 +77,22 @@ function SceneConfiguration({ canvasSize }){
 
     return(
         <>
-            <PerspectiveCamera red={ camera } theatreKey='Camera' makeDefault position={ [0, 0, 0] } fov={ 75 } near={ 0.01 } far={ 1000 } aspect={aspect} onUpdate={(c) => c.updateProjectionMatrix()}/>
-            <directionalLight position={ [-50, 25, -100] } intensity={ 2 } color={ '#fff8b6' } />
-            <directionalLight position={ [-50, 0, -100] } intensity={ 2 } color={ '#ffe4a3' }/>
-            <directionalLight position={ [-50, 12, -100] } intensity={ 2 } color={ '#FAD6A5' }/>
-            <directionalLight position={ [0, 12, 100] } intensity={ 2 } color={ '#FAD6A5' }/>
-            <directionalLight position={ [0, 12, 100] } intensity={ 0.5 } color={ '#FD5E53' }/>
-            <ambientLight intensity={1}/>
+            <PerspectiveCamera 
+                ref={ camera }
+                theatreKey='Camera' 
+                makeDefault 
+                position={[0, 0, 0]} 
+                fov={75} 
+                near={0.1}
+                far={2000}
+                aspect={ aspect }
+                onUpdate={(c) => c.updateProjectionMatrix()}
+            />
+            <directionalLight position={ [-50, 25, -100] } intensity={ 2 } color={ '#ffe4a3' }  />
+            <directionalLight position={ [-50, 25, -100] } intensity={ 2 } color={ '#FAD6A5' }  />
+            <directionalLight position={ [0, 12, 100] } intensity={ 2 } color={ '#FAD6A5' }  />
+            <directionalLight position={ [0, 12, 100] } intensity={ 0.5 } color={ '#FD5E53' }   />
+            <ambientLight intensity={0.5} />
             <pointLight position={ [0, 1, -0.4] } intensity={ 3 } />
         </>
     )
@@ -90,24 +100,13 @@ function SceneConfiguration({ canvasSize }){
 
 /*
 <PerspectiveCamera theatreKey='Camera' makeDefault position={ [0, 0, 0] } fov={ 90 } near={ 0.1 } far={ 70 } />
-            <directionalLight position={ [-3, -1, 1] } intensity={ 3 } color={ '#fff8b6' } />
-            <directionalLight position={ [-3, -1, 1] } intensity={ 1 } />
-            <directionalLight position={ [1, -2, -2] } intensity={ 3 } color={ '#ffe4a3' }/>
-            <directionalLight position={ [1, -2, -2] } intensity={ 1 } />
-            <directionalLight position={ [1, 1, 1] } intensity={ 3 } color={ '#FAD6A5' }/>
-            <ambientLight intensity={ 1 } color={ '#ff8d71' }/>
-            <hemisphereLight skyColor="#ff707e" groundColor="#000000" intensity={ 1 } />
-
-
-
-            <ambientLight intensity={ 1 } color={ '#ff8d71' }/>
-            <ambientLight intensity={ 1 } color={ '#ff8d71' }/>
+            <directionalLight position={ [-50, 25, -100] } intensity={ 2 } color={ '#fff8b6' } />
+            <directionalLight position={ [-50, 25, -100] } intensity={ 2 } color={ '#ffe4a3' } />
+            <directionalLight position={ [-50, 25, -100] } intensity={ 2 } color={ '#FAD6A5' } />
+            <directionalLight position={ [0, 12, 100] } intensity={ 2 } color={ '#FAD6A5' } />
+            <directionalLight position={ [0, 12, 100] } intensity={ 0.5 } color={ '#FD5E53' } />
+            <ambientLight intensity={0.5}/>
             <pointLight position={ [0, 1, -0.4] } intensity={ 3 } />
-
-
-
-
-            <pointLight position={ [24.84, 3.65, -41.39] } intensity={ 50 } color={ '#00ff7f' }/>
 
 
 
