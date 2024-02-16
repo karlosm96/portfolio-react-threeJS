@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Suspense } from "react";
 import { getProject, val } from '@theatre/core'
-import { OrbitControls, ScrollControls, Sphere, useScroll, useGLTF } from "@react-three/drei";
+import { OrbitControls, ScrollControls, useScroll, useGLTF } from "@react-three/drei";
 import { SheetProvider, PerspectiveCamera, useCurrentSheet } from '@theatre/r3f';
 
 
@@ -16,6 +16,7 @@ export default function Scene(props){
     const sheet = getProject('preliminar name', { state: cameraMoveState }).sheet('Scene');
     const [canvasSize, setCanvasSize] = useState({ width: window.innerWidth, height: window.innerHeight });
     const {contextState, setContextState} = useStateContext();
+    const [start, setStart] = useState(false);
     
     useEffect(() =>{
         // Responsive section
@@ -46,15 +47,17 @@ export default function Scene(props){
 
     return(
         <section>
+            <Loader progress={props.progress} start={ setStart }/>
             <Canvas className="section-canvas" id="section-canvas" 
-                style={{filter: contextState['activationState'] ? 'blur(5px)' : 'none'}}
+                style={{ position: 'relative', display: 'flex',
+                         filter: contextState['activationState'] ? 'blur(5px)' : 'none', opacity: start ? 1 : 0}}
                 gl={{ preserveDrawingBuffer: true }}
                 frameloop="demand">
-                <Suspense fallback={ <Loader progress={props.progress} /> }>
-                    <ScrollControls pages={ 5 } damping={ 1 } >
+                <Suspense fallback={ null }>
+                    <ScrollControls pages={ 5 } damping={ 1 }>
                         <SheetProvider sheet={ sheet }>
                             <SceneConfiguration canvasSize={ canvasSize } />
-                            <Room scale={ roomScale } position={ roomPosition } />
+                            <Room  scale={ roomScale } position={ roomPosition } />
                         </SheetProvider>
                     </ScrollControls>
                 </Suspense>
@@ -99,6 +102,15 @@ function SceneConfiguration({ canvasSize }){
 }
 
 /*
+<Suspense fallback={ <Loader progress={props.progress} /> }>
+                    <ScrollControls pages={ 5 } damping={ 1 }>
+                        <SheetProvider sheet={ sheet }>
+                            <SceneConfiguration canvasSize={ canvasSize } />
+                            <Room scale={ roomScale } position={ roomPosition } />
+                        </SheetProvider>
+                    </ScrollControls>
+                </Suspense>
+
 <PerspectiveCamera theatreKey='Camera' makeDefault position={ [0, 0, 0] } fov={ 90 } near={ 0.1 } far={ 70 } />
             <directionalLight position={ [-50, 25, -100] } intensity={ 2 } color={ '#fff8b6' } />
             <directionalLight position={ [-50, 25, -100] } intensity={ 2 } color={ '#ffe4a3' } />

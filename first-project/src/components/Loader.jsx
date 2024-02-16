@@ -1,16 +1,28 @@
 import { Html } from '@react-three/drei';
+import { useState } from 'react';
 
 export default function Loader(props){
+    const [ enterRoom, setEnterRoom ] = useState(false);
 
     return(
-        <Html  
-        fullscreen={true}
-        style={{background:"linear-gradient(180deg, rgba(48,48,91,0.9220938375350141) 0%, rgba(0,0,0,0.9215335792520133) 100%)", backgoundSize:"cover", display: "flex", justifyContent: "center", alignItems:"center"}}>
+        <div 
+        style={{display:"flex", position: "absolute", width: "100dvw", height: "100dvh", zIndex: 999, 
+        background:"linear-gradient(180deg, rgba(48,48,91,0.9220938375350141) 0%, rgba(0,0,0,0.9215335792520133) 100%)", 
+        backgoundSize:"cover", display: "flex", justifyContent: "center", alignItems:"center"}}
+        className={enterRoom ? 'courtainEffect' : ''}>
             <div id="loader-div">
-                <div id="bar-div">
-                    <div id="progress" style={{width: `${props.progress}%`}}><p id="progress-p">{props.progress}%</p></div>
+                <div id="progress-div" className={props.progress!= 100 ? '' : 'fadeOut'}>
+                    <img id="loader-img" src="src/assets/img/brain.png" alt="" />
+                    <div id="bar-div">
+                        <div id="progress" style={{width: `${props.progress}%`}} />
+                        <p id="progress-p">{props.progress}%</p>
+                    </div>
                 </div>
+                <button id="button-loader" className={props.progress!= 100 ? '' : 'fadeIn' } 
+                onClick={ (e)=>{ setEnterRoom(!enterRoom);  props.start(true)}}>
+                    <h1>Enter</h1>
+                </button>
             </div>
-        </Html>
+        </div>
     )
 }
