@@ -1,8 +1,5 @@
 import React, { createContext, useState, useContext, useEffect} from 'react';
 
-import '../styles/home.css';
-
-import SideBar from "./SideBar";
 import { Fragment } from "react";
 import Scene from "./Scene.jsx";
 import Footer from "./Footer.jsx";
@@ -12,7 +9,7 @@ const StateContext = createContext();
 
 const StateProvider = ({ children })=> {
     const [contextState, setContextState] = useState({
-        activationState: false, //change in the end to false
+        activationState: false,
         projectName: '' // empty
     });
 
@@ -28,9 +25,8 @@ export const useStateContext = () => useContext(StateContext);
 export default function Home(){
 
     const [progress, setProgress] = useState(0);
-
-    console.log(progress);
-    // Simula la carga de recursos (puedes adaptarlo a tu lógica real)
+    
+    // Simulates data loading
     useEffect(() => {
         const timer = setInterval(() => {
             setProgress(prevProgress => {
@@ -40,7 +36,7 @@ export default function Home(){
                 clearInterval(timer);
                 return 100;
             });
-        }, 400);
+        }, 800);
     }, []);
 
     return(

@@ -385,6 +385,7 @@ h4{
   justify-content: center;
   max-width: 60dvw;
   min-width: 20dvw;
+  z-index: 10;
 }
 
 #loader-img{
@@ -439,7 +440,6 @@ h4{
 }
 
 #button-loader{
-  display: flex;
   position: absolute;
   justify-self: center;
   width: 200px;
@@ -449,12 +449,13 @@ h4{
   border-color: #FFF;
   box-shadow: 1px 1px 1px 2px #ffffffbd;
   justify-content: center;
+  display: flex;
   opacity: 0;
 }
 
 .fadeIn{
   animation-name: fadeIn;
-  animation-duration: 10s;
+  animation-duration: 6s;
   animation-fill-mode: forwards;
 }
 
