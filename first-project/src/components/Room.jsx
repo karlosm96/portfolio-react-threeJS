@@ -710,7 +710,7 @@ export function Room( {scale, position} ) {
         <mesh geometry={nodes.Cube440_1.geometry} material={materials['verde.brilla']} />
       </a.group>
       <mesh geometry={nodes.key399.geometry} material={nodes.key399.material} position={[-3.488, 0.212, 5.907]} rotation={[0, 0.377, 0]} scale={[0.114, 0.004, 0.114]} />
-      <mesh geometry={nodes.floor.geometry} material={materials.wood_floor} position={[4.82, 11.003, -9.9]} rotation={[Math.PI, -1.568, 0]} scale={[-32.643, -39.412, -27.195]} />
+      <mesh geometry={nodes.floor.geometry} material={materials.shadow_floor} position={[4.82, 11.003, -9.9]} rotation={[Math.PI, -1.568, 0]} scale={[-32.643, -39.412, -27.195]} />
       <mesh geometry={nodes.tittleprojects.geometry} material={materials.blanco} position={[-10.822, 17.223, -49.002]} rotation={[1.572, 0, 0]} scale={[0.567, 0.538, 0.51]} />
       <mesh geometry={nodes.gab.geometry} material={materials.b_marmol} position={[35.343, 6.074, -5.028]} rotation={[0, -1.554, 0]} scale={[1.346, 1.793, 2.201]} />
       <mesh geometry={nodes.handle004.geometry} material={materials['plateado.oscuro.2']} position={[31.889, -2.607, -10.968]} rotation={[1.574, 0.019, 1.56]} scale={0.231} />
@@ -730,8 +730,8 @@ export function Room( {scale, position} ) {
       <mesh geometry={nodes.edges.geometry} material={materials.blanco} position={[27.437, 19.848, 24.293]} rotation={[Math.PI, -1.568, 0]} scale={[-0.23, -0.746, -8.725]} />
       <mesh geometry={nodes.gab001.geometry} material={materials.desk} position={[33.589, -0.248, -5.852]} rotation={[0, -1.554, 0]} scale={[1.346, 1.793, 2.201]} />
       <mesh geometry={nodes.gab002.geometry} material={materials.cabinet} position={[34.759, -0.37, -5.694]} rotation={[0, -1.554, 0]} scale={[1.346, 1.793, 2.201]} />
-      <mesh geometry={nodes.frames.geometry} material={materials.blanco} position={[39.694, -4.173, -12.167]} scale={[0.901, 0.901, 38.811]} />
-      <mesh geometry={nodes.wall.geometry} material={materials.wall} position={[39.694, -4.173, -12.167]} scale={[0.901, 0.901, 38.811]} />
+      <mesh geometry={nodes.frames.geometry} material={materials.blanco} position={[-28.594, 8.758, -11.101]} scale={[0.171, 0.901, 38.811]} />
+      <mesh geometry={nodes.wall.geometry} material={materials.wall} position={[39.694, -4.173, -12.167]} scale={[0.901, 0.901, 38.811]} />      
       <mesh geometry={nodes.windows.geometry} material={materials.Glass} position={[-28.934, 8.758, -12.167]} rotation={[-Math.PI, 0, 0]} scale={[0.901, 0.901, 38.811]} receiveShadow/>
       <mesh geometry={nodes.cristal001.geometry} material={materials.Glass} position={[-2.033, 0.783, 2.56]} rotation={[0, 1.562, 0]} scale={[6.088, 0.038, 6.088]} />
       <mesh geometry={nodes.roof.geometry} material={materials.blanco} position={[5.439, 23.029, -12.409]} scale={[33.913, 0.569, 38.904]} />
@@ -1169,6 +1169,8 @@ function VideoMaterial({ url }) {
 export default Room;
 
 /*
+<ClickPointer mat={materials.pin} positionPointer={ positionCard.pointerCardmiDulceOnline } positionBasePointer={ positionCard.basePointerCardmiDulceOnline }></ClickPointer>
+
 const execute = new Promise(function(resolve, reject){
         resolve(names.forEach(element => 
           {actions[element].reset().fadeIn(1).play()}
