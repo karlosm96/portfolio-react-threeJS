@@ -87,8 +87,11 @@ export function Room( {scale, position} ) {
   }
 
   function displayProject(projectName){
+    // Display project (by name)
     setContextState({
       activationState: true,
+      showContact: false,
+      showProject: true,
       projectName: projectName
     })
   }

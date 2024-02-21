@@ -47,7 +47,8 @@ h1, h2, h5{
 /* -------- */
 /* Projects */
 /* -------- */
-#section-projects {
+#section-projects,
+#section-contact{
   display: flex;
   flex-wrap: wrap;
   position: absolute;
@@ -61,7 +62,8 @@ h1, h2, h5{
   border-radius: 5px;
 }
 
-#button-container-projects{
+#button-container-projects,
+#button-container-contact{
   width: 100%;
   height: fit-content;
   display: flex;
@@ -69,7 +71,8 @@ h1, h2, h5{
   background-color: transparent;
 }
 
-#button-projects{
+#button-close-projects,
+#button-close-contact{
   z-index: 999;
   background-color: transparent;
   width: 1.8rem;
@@ -265,7 +268,9 @@ h4{
   }
 }
 
-/* click footer */
+/* -----------------------
+   ---- click footer -----
+   ----------------------- */
 #flex-click-footer{
   display: flex;
   justify-content: center;
@@ -369,7 +374,9 @@ h4{
   border-radius: 50%;
 }
 
-/* Loader */
+/* ------------------------------
+   ---------- Loader ------------
+   ------------------------------ */
 #loader-div{
   background-color: transparent; 
   width: 100dvw;
@@ -474,7 +481,7 @@ h4{
 
 .courtainEffect{
   animation-name: courtainEffect;
-  animation-duration: 4s;
+  animation-duration: 2s;
   animation-fill-mode: forwards;
 } 
 
@@ -482,3 +489,152 @@ h4{
   from { height: 100%; }
   to { height: 0%; }
 }
+
+/* -------------------------------
+   --------- ContactMe -----------
+   ------------------------------- */
+
+#contact-data-container{
+  background: linear-gradient(180deg, rgba(47,47,85,1) 30%, rgba(0,0,0,0.6) 100%);
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  width: 58%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+#contact-image-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(47,47,85,1) 30%, rgba(0,0,0,0.6) 100%);
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  margin-left: 2%;
+}
+
+#img-contact{
+  width: 150%;
+  display: flex;
+}
+
+
+form{
+  width: 100%;
+  justify-content: center;
+  height: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 3%;
+}
+
+form h1{
+  margin-left: 1%;
+  margin-bottom: 5%;
+}
+
+.group-name-email{
+  margin: 2% 1% 2% 1%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 48%;
+  height: 20%;
+}
+
+#subject-container{
+  margin: 2% 1% 2% 1%;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: fit-content;
+}
+
+input, textarea{
+  width: 100%;
+  border-radius: 3px;
+  border: #FFF;
+  padding: 1%;
+  background-color: transparent;
+}
+
+label{
+  display: flex;
+  width: 100%;
+  font-size: 0.8rem;
+  justify-content: end;
+}
+
+input{
+  height: 35px;
+  box-shadow: 2px 2px 2px 1px rgba(255, 255, 255, 0.2);
+}
+
+::placeholder {
+  color: #fff;
+}
+
+textarea{
+  box-shadow: 2px 2px 2px 1px rgba(255, 255, 255, 0.2);
+  min-height: 150px;
+  max-height: 200px;
+}
+
+input:invalid, textarea:invalid{
+  box-shadow: 2px 2px 2px 1px rgb(247, 99, 99);
+}
+
+input:focus{
+  outline: none;
+  box-shadow: 2px 2px 2px 1px rgba(12, 255, 251, 0.6);
+  background-color: rgb(52, 52, 94);
+}
+
+input:active{
+  box-shadow: 2px 2px 2px 1px rgba(12, 255, 251, 0.6);
+  background-color: rgb(52, 52, 94);
+}
+
+textarea:focus,
+textarea:active{
+  outline: none;
+  box-shadow: 2px 2px 2px 1px rgba(12, 255, 251, 0.6);
+  background-color: rgba(47,47,85,1);
+}
+
+#user-name,
+#user-email{
+  padding: 2%;
+}
+
+#message-container{
+  margin: 1%;
+  width: 100%;
+}
+
+#send-email{
+  margin-top: 3%;
+  min-width: 20%;
+  min-height: 50px;
+  margin: 1px #ffff;
+  background-color: transparent;
+  font-size: 1.2rem;
+  border-radius: 5px;
+}
+
+.activate:hover{
+  background: linear-gradient(180deg, rgba(47,47,85,1) 60%, rgba(0,0,0,0.6) 100%);
+  box-shadow: 2px 2px 2px 1px rgba(12, 255, 251, 0.6);
+}
+
+.activate{
+  box-shadow: 2px 2px 2px 1px rgba(255, 255, 255, 0.2);
+}
+
+.desactivate:hover{
+  box-shadow: 2px 2px 2px 1px rgb(247, 99, 99);
+  background: linear-gradient(180deg, rgba(47,47,85,1) 60%, rgba(0,0,0,0.6) 100%);
+}
+

@@ -4,23 +4,24 @@ import projectsInfo from '../assets/projectData/projects_info.json';
 export default function Projects(props){
 
     const {contextState, setContextState} = useStateContext();
-    const activactionState = contextState['activationState'];
+    const activactionState = contextState['showProject'];
     const projectInfo = activactionState ? projectsInfo[contextState['projectName']] : null;
 
     function closeProject(){
-        console.log("activado");
         // Restart context variables
         setContextState({
             activationState: false,
+            showContact: false,
+            showProject: false,
             projectName: ""
           })
     }
 
     function displayProject(){
         return(
-            <section id="section-projects" className="">
+            <section id="section-projects">
                 <div id="button-container-projects">
-                    <button id="button-projects" onClick={ (e) =>{ closeProject(); } }><p id='button-p'></p></button>
+                    <button id="button-close-projects" onClick={ (e) =>{ closeProject(); } }><p id='button-p'></p></button>
                 </div>
                 <video id="project-video"></video>
                 <div id="description-container">
@@ -39,9 +40,5 @@ export default function Projects(props){
         )
     }
 
-    return(
-        <>
-            {activactionState ? displayProject() : null} 
-        </>
-    )
+    return activactionState ? displayProject() : null;
 }

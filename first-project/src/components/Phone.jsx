@@ -3,9 +3,11 @@ import { a } from '@react-spring/three'
 import { useGLTF } from '@react-three/drei';
 
 import GLTF from '../assets/models/phone.glb';
+import { useStateContext } from './Home';
 
 export default function Phone(props){
     const { nodes, materials } = useGLTF(GLTF);
+    const {contextState, setContextState} = useStateContext();
 
     const defaultPositionApp = {
         outlook : [33.9, 6.403, 3.001],
@@ -33,9 +35,6 @@ export default function Phone(props){
         }
     }
 
-    materials.phone_crow.roughness = 0.5;
-    materials.phone_crow.metalness = 0.1;
-
     return(
         <a.group>
             <mesh geometry={nodes.phonescreen.geometry} material={materials.phone_crow} position={[34.638, 6.342, 3.376]} rotation={[Math.PI, -1.126, Math.PI]} scale={[0.894, 0.169, 1.673]} />
@@ -53,6 +52,12 @@ export default function Phone(props){
                 
             <mesh onPointerEnter={ (e)=>{setHovered(true); setAppName('outlook');} } 
                 onPointerLeave={ (e)=>{setHovered(false); setAppName('outlook');} }  
+                onClick={ (e)=>{ setContextState({
+                    activationState: true,
+                    showContact: true,
+                    showProject: false,
+                    projectName: ""
+                  }) } }
                 geometry={nodes.outlookscreen.geometry} 
                 material={materials.outlook} 
                 position={positionApp.outlook} 

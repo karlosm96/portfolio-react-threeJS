@@ -4,13 +4,16 @@ import { Fragment } from "react";
 import Scene from "./Scene.jsx";
 import Footer from "./Footer.jsx";
 import Projects from "./Projects.jsx";
+import ContactMe from './ContacMe.jsx';
 
 const StateContext = createContext();
 
 const StateProvider = ({ children })=> {
     const [contextState, setContextState] = useState({
         activationState: false,
-        projectName: '' // empty
+        showContact: false,
+        showProject: false,
+        projectName: ''
     });
 
     return(
@@ -45,6 +48,7 @@ export default function Home(){
                 <Scene progress={progress} />
                 <Projects />
                 <Footer />
+                <ContactMe />
             </StateProvider>
         </Fragment>
     )
