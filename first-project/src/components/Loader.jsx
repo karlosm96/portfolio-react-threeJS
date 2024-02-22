@@ -7,8 +7,8 @@ export default function Loader(props){
     return(
         <div 
         style={{display:"flex", position: "absolute", width: "100dvw", height: "100dvh", zIndex: 999, 
-        background:"linear-gradient(180deg, rgba(48,48,91,0.9220938375350141) 0%, rgba(0,0,0,0.9215335792520133) 100%)", 
-        backgoundSize:"cover", display: "flex", justifyContent: "center", alignItems:"center"}}
+        background:"linear-gradient(180deg, rgba(48,48,91,0.9220938375350141) 0%, rgba(0,0,0,0.9215335792520133) 100%)",
+        backgroundColor:"black", display: "flex", justifyContent: "center", alignItems:"center"}}
         className={ enterRoom ? 'courtainEffect' : '' }>
             <div id="loader-div">
                 <div id="progress-div" className={props.progress!= 100 ? '' : 'fadeOut'}> 

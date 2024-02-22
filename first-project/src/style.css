@@ -35,7 +35,7 @@ h1, h2, h5{
 
 #section-canvas{
   min-width: 100%;
-  position: relative;
+  position: absolute;
   background-image:url('./assets/img/sunset_2.jpg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -486,8 +486,9 @@ h4{
 } 
 
 @keyframes courtainEffect {
-  from { height: 100%; }
-  to { height: 0%; }
+  from { height: 100dvh; }
+  to { height: 0dvh; 
+       z-index: -1;}
 }
 
 /* -------------------------------
@@ -515,10 +516,14 @@ h4{
 }
 
 #img-contact{
-  width: 150%;
+  width: 100%;
   display: flex;
 }
 
+hr{
+  color: #FFF;
+  width: 100%;
+}
 
 form{
   width: 100%;
@@ -531,7 +536,7 @@ form{
 
 form h1{
   margin-left: 1%;
-  margin-bottom: 5%;
+  margin-bottom: 1%;
 }
 
 .group-name-email{
@@ -578,7 +583,7 @@ input{
 
 textarea{
   box-shadow: 2px 2px 2px 1px rgba(255, 255, 255, 0.2);
-  min-height: 150px;
+  min-height: 100px;
   max-height: 200px;
 }
 
@@ -614,9 +619,9 @@ textarea:active{
   width: 100%;
 }
 
-#send-email{
+#button-email{
   margin-top: 3%;
-  min-width: 20%;
+  min-width: 100px;
   min-height: 50px;
   margin: 1px #ffff;
   background-color: transparent;
@@ -636,5 +641,23 @@ textarea:active{
 .desactivate:hover{
   box-shadow: 2px 2px 2px 1px rgb(247, 99, 99);
   background: linear-gradient(180deg, rgba(47,47,85,1) 60%, rgba(0,0,0,0.6) 100%);
+}
+
+@media only screen and (max-width: 768px) {
+  #section-contact{
+    height: fit-content;
+  }
+
+  #contact-data-container{
+    width: 100%;
+  }
+
+  #contact-image-container{
+    display: none;
+  }
+
+  .group-name-email{
+    width: 100%;
+  }
 }
 

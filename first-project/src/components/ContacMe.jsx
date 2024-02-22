@@ -34,7 +34,7 @@ export default function ContactMe(){
     }
 
     function buttonValidation(e){
-        const button = document.getElementById('send-email');
+        const button = document.getElementById('button-email');
         if(isLenghtValid(nameLenght) && isEmailValid(emailLenght) && isLenghtValid(subjectLenght) && isLenghtValid(messageLenght)){
             button.classList.remove('desactivate');
             button.classList.add('activate'); 
@@ -65,6 +65,7 @@ export default function ContactMe(){
                 <div id="contact-data-container">
                     <form>
                         <h1>Contact Me</h1>
+                        <hr />
                         <div className="group-name-email" id="name-container">
                             <input id="user-name" type="text" placeholder="Name" maxLength={50} onChange={(e) =>{ charactersCount(e, setNameLenght) }}/>
                         </div>
@@ -79,7 +80,7 @@ export default function ContactMe(){
                             <label htmlFor="">{messageLenght.length}/{maxLenght}</label>
                         </div>
 
-                        <button className="activate" id="send-email" 
+                        <button className="activate" id="button-email" 
                                 onClick={ (e)=>{ sendMessage(e) }}
                                 onPointerEnter={ (e)=>{ buttonValidation(e) }}
                                 onPointerLeave={ (e)=>{ buttonValidation(e) }}>
