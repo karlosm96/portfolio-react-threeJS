@@ -16,7 +16,7 @@ body{
   height: 100dvh;
   margin: 0;
   padding: 0;
-  /*background-color: #939495;*/
+  background-color: rgba(47,47,85,1);
 }
 
 h1, h2, h5{
@@ -53,7 +53,7 @@ h1, h2, h5{
   flex-wrap: wrap;
   position: absolute;
   background: rgb(47,47,85);
-  background: linear-gradient(180deg, rgba(47,47,85,1) 17%, rgba(0,0,0,0.8996848739495799) 100%);
+  background: linear-gradient(180deg, rgba(47,47,85,1) 17%, rgba(0,0,0,0.9) 100%);
   background-size: contain;
   top: 10%;
   width: 80dvw;
@@ -107,6 +107,8 @@ h1, h2, h5{
 #project-video {
   background-color: black;
   min-width: 60%;
+  max-width: 100%;
+  max-height: 64%;
   border-radius: 5px;
   height: auto;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
