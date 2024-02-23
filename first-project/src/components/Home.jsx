@@ -5,6 +5,7 @@ import Scene from "./Scene.jsx";
 import Footer from "./Footer.jsx";
 import Projects from "./Projects.jsx";
 import ContactMe from './ContacMe.jsx';
+import SideBar from './SideBar.jsx';
 
 const StateContext = createContext();
 
@@ -45,10 +46,11 @@ export default function Home(){
     return(
         <Fragment>
             <StateProvider>
+                <SideBar />
                 <Scene progress={progress} />
                 <Projects />
-                <Footer />
                 <ContactMe />
+                <Footer />
             </StateProvider>
         </Fragment>
     )

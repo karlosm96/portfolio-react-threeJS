@@ -16,21 +16,3 @@ export default function Footer( {activation, action} ){
         </>
     )
 }
-
-/**
- * <div id="click-footer" className="hidden">
-                    <div id="flex-click-footer">
-                        <div id="click-animation">
-                            <div id="parent">
-                                <div id="first-child">
-                                    <div id="second-child">
-                                        <div id="transparent-child"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <img id="click-id" src="../src/assets/img/pointer_hand.png" alt="" />
-                        </div>
-                        <h4>Click to interact and Scroll</h4>
-                    </div>
-                </div>
- */
