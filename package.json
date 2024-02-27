@@ -18,6 +18,7 @@
     "@theatre/core": "^0.7.0",
     "@theatre/r3f": "^0.7.0",
     "@theatre/studio": "^0.7.0",
+    "axios": "^1.6.7",
     "gltfjsx": "^6.2.16"
   }
 }

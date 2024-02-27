@@ -57,7 +57,7 @@ h1, h2, h5{
   background-size: contain;
   top: 10%;
   width: 80dvw;
-  height: 80dvh;
+  height: fit-content;
   padding: 1.5rem;
   border-radius: 5px;
 }
@@ -107,8 +107,9 @@ h1, h2, h5{
 #project-video {
   background-color: black;
   min-width: 60%;
-  max-width: 100%;
+  width: fit-content;
   max-height: 64%;
+  aspect-ratio: 16/9;
   border-radius: 5px;
   height: auto;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
@@ -181,7 +182,6 @@ h1{
   }
 
   #project-video {
-    max-width: 100%;
     height: auto;
     min-width: 100%;
   }
@@ -191,8 +191,8 @@ h1{
   }
 
   .skill-tech {
-    min-width: 80px;
-    min-height: 80px;
+    min-width: 50px;
+    min-height: 50px;
   }
 }
 
@@ -331,7 +331,6 @@ h1{
   justify-content: center;
   align-items: center;
   width: 40%;
-  height: 100%;
   background: linear-gradient(180deg, rgba(47,47,85,1) 30%, rgba(0,0,0,0.6) 100%);
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   margin-left: 2%;
@@ -481,6 +480,79 @@ textarea:active{
   .group-name-email{
     width: 100%;
   }
+}
+
+#response-image-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.response-image{
+  font-size: 2rem;
+  font-weight: 900;
+  color: #fff;
+}
+
+/* ----------------------- */
+/* - ContactMe Animation -
+/* ----------------------- */
+
+.sending-container{   
+  display: grid;
+  place-content: center;
+  height: 20vh;
+}
+.sending-animation{
+  width: 120px;
+  height: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin: 0 auto; 
+}
+.sending-text{ 
+  padding-top:20px;
+  justify-content: center;
+}
+.sending-animation span{
+  width: 100%;
+  display: flex;
+  justify-self: center;
+  font-size: 1.3rem;
+}
+.balls {
+    width: 15px;
+    height: 15px;
+    background-color: rgba(12, 255, 251);
+    animation: jump .5s alternate
+    infinite;
+  border-radius: 50%  
+}
+.balls:nth-child(2) {
+    animation-delay: .18s;
+}
+.balls:nth-child(3) {
+    animation-delay: .37s;
+}
+.balls:nth-child(4) {
+  animation-delay: .56s;
+}
+.balls:nth-child(5) {
+  animation-delay: .75s;
+}
+@keyframes jump {
+    from {
+        transform: scaleX(1.25);
+    }
+    to{
+        transform: 
+        translateY(-50px) scaleX(1);
+    }
 }
 
 /* ------------- */
