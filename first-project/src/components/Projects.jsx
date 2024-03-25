@@ -23,7 +23,10 @@ export default function Projects(props){
                 <div id="button-container-projects">
                     <button id="button-close-projects" onClick={ (e) =>{ closeProject(); } }><p id='button-p'></p></button>
                 </div>
-                <video id="project-video" src={`src/assets/videos/${projectInfo['video']}`} controls></video>
+                {projectInfo['video'] != null 
+                    ? <video id="project-video" src={`src/assets/videos/${projectInfo['video']}`} controls></video>
+                    : <img id="project-img" src={`src/assets/img/${projectInfo['img']}`}></img> 
+                }
                 <div id="description-container">
                     <h1 id="project-name">{projectInfo['name']}</h1>
                     <h4 id="project-url"><a id="link-project" href={projectInfo['url']} target={"_blank"} rel="noreferrer"><i className="fa-solid fa-link" style={{color: "#ffffff"}}></i></a></h4>

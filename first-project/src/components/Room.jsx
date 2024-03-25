@@ -738,7 +738,7 @@ export function Room( {scale, position} ) {
       <mesh geometry={nodes.wall.geometry} material={materials.wall} position={[39.694, -4.173, -12.167]} scale={[0.901, 0.901, 38.811]} />      
       <mesh geometry={nodes.windows.geometry} material={materials.Glass} position={[-28.934, 8.758, -12.167]} rotation={[-Math.PI, 0, 0]} scale={[0.901, 0.901, 38.811]} receiveShadow/>
       <mesh geometry={nodes.cristal001.geometry} material={materials.Glass} position={[-2.033, 0.783, 2.56]} rotation={[0, 1.562, 0]} scale={[6.088, 0.038, 6.088]} />
-      <mesh geometry={nodes.roof.geometry} material={materials.blanco} position={[5.439, 23.029, -12.409]} scale={[33.913, 0.569, 38.904]} />
+      <mesh geometry={nodes.roof.geometry} material={materials.blanco} position={[5.439, 23.029, -12.409]} scale={[33.913, 0.569, 38.904]} castShadow receiveShadow/>
 
       <ClickPointer mat={materials.pin} positionPointer={ positionCard.pointerCardmiDulceOnline } positionBasePointer={ positionCard.basePointerCardmiDulceOnline }></ClickPointer>
       <a.group 

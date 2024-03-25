@@ -104,7 +104,8 @@ h1, h2, h5{
   transform: rotateZ(90deg);
 }
 
-#project-video {
+#project-video,
+#project-img {
   background-color: black;
   max-width: 60%;
   min-width: 60%;
@@ -181,7 +182,8 @@ h1{
     top: 5%;
   }
 
-  #project-video {
+  #project-video,
+  #project-img {
     height: auto;
     min-width: 100%;
   }
