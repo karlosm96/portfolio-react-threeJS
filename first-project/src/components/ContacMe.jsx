@@ -149,7 +149,6 @@ function ResultImage({response}){
             {response ? <span className="response-image">&#10003;</span> : <span className="response-image">&#10005;</span>}
         </div>
     )
- 
 }
 
 function Spinner(){

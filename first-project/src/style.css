@@ -106,8 +106,8 @@ h1, h2, h5{
 
 #project-video {
   background-color: black;
+  max-width: 60%;
   min-width: 60%;
-  width: fit-content;
   max-height: 64%;
   aspect-ratio: 16/9;
   border-radius: 5px;

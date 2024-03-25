@@ -14,6 +14,7 @@ import Poring from "./Poring.jsx";
 import ClickPointer from "./ClickPointer.jsx";
 import PoringVid from '../assets/videos/poring.mp4';
 import Phone from "./Phone.jsx";
+import Pecopeco from "./Pecopeco.jsx";
 
 
 export function Room( {scale, position} ) {
@@ -101,7 +102,7 @@ export function Room( {scale, position} ) {
     <a.group name="Scene" ref={refRoom}>
       <Poring scale={ scale } position={ position }/>
       <Book scale={ scale } position={ position }/>
-
+      <Pecopeco scale={ scale } position={ position }/>
       <a.group position={[19.314, 11.224, -44.549]} rotation={[-Math.PI / 2, 0, -1.57]} scale={1.462}>
         <a.group rotation={[Math.PI / 2, 0, 0]}>
           <a.group position={[-1.037, -1.709, -7.388]} rotation={[-Math.PI, 0, 0]} scale={[-0.003, -0.546, -0.109]}>
@@ -886,7 +887,7 @@ export function Room( {scale, position} ) {
       <mesh geometry={nodes.desk.geometry} material={materials.plastic_notebook} position={[20.109, 2.727, -43.51]} scale={[11.644, 0.246, 4.411]} />
       <mesh geometry={nodes.front_glass.geometry} material={materials.Glass} position={[24.658, 3.396, -40.541]} scale={[11.644, 0.246, 4.411]} />
       <mesh geometry={nodes.monitor.geometry} material={materials.plateado} position={[0, 0, -22.474]} />
-      <mesh geometry={nodes.monitor_screen.geometry} material={nodes.monitor_screen.material} position={[0, 0, -22.474]} />
+      <mesh geometry={nodes.monitor_screen.geometry} material={materials.Error_404} position={[0, -0.054, -22.474]} />
       <a.group position={[18.526, 4.695, -43.393]} rotation={[0, -0.01, 0]} scale={[0.307, 0.371, 0.303]}>
         <mesh geometry={nodes.Plane018.geometry} material={materials.plastic_notebook} />
         <mesh geometry={nodes.Plane018_1.geometry} material={materials.blanco} />
@@ -1164,27 +1165,9 @@ export function Room( {scale, position} ) {
 }
 
 function VideoMaterial({ url }) {
-  const texture = useVideoTexture(url)
+  const texture = useVideoTexture(url);
   texture.flipY = true;
   return <meshBasicMaterial map={texture} toneMapped={false} />
 }
 
 export default Room;
-
-/*
-<ClickPointer mat={materials.pin} positionPointer={ positionCard.pointerCardmiDulceOnline } positionBasePointer={ positionCard.basePointerCardmiDulceOnline }></ClickPointer>
-
-const execute = new Promise(function(resolve, reject){
-        resolve(names.forEach(element => 
-          {actions[element].reset().fadeIn(1).play()}
-        ))
-      })
-      
-      execute().then()
-
-
-
-            <mesh geometry={nodes.top_notebook002.geometry} material={nodes.top_notebook002.material} position={[-4.88, 1.786, 4.62]} rotation={[-0.025, -4.338, 1.579]} scale={[1.374, 0.03, 2.151]} >
-
-            <a.group onPointerEnter={ (e)=>{setHovered(true)} } onPointerLeave={ (e)=>{setHovered(false)} } position={ positionCard } rotation={[1.566, 0, 0]} scale={0.929}>
-*/
