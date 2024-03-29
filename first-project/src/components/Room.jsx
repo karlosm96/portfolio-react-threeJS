@@ -721,7 +721,7 @@ export function Room( {scale, position} ) {
       <mesh geometry={nodes.gem004.geometry} material={materials.esmeralda} position={[31.766, -2.597, -10.963]} rotation={[0, -1.56, 1.564]} scale={[0.162, 0.167, 0.134]} />
       <mesh geometry={nodes.handle005.geometry} material={materials['plateado.oscuro.2']} position={[31.889, 0.628, -10.968]} rotation={[1.574, 0.019, 1.56]} scale={0.231} />
       <mesh geometry={nodes.gem005.geometry} material={materials.esmeralda} position={[31.766, 0.638, -10.963]} rotation={[0, -1.56, 1.564]} scale={[0.162, 0.167, 0.134]} />
-      <mesh geometry={nodes.carpet.geometry} material={materials['carpet.2']} position={[-2.196, 5.805, 8.772]} rotation={[0.199, -0.298, 0.32]} scale={[-14.787, -0.012, -14.787]} />
+      <mesh geometry={nodes.carpet.geometry} material={materials['carpet.2']} position={[-2.425, -4.625, 6.947]} rotation={[-Math.PI, 0, -Math.PI]} scale={[14.275, 0.138, 15.883]} />
       <mesh geometry={nodes.pillow.geometry} material={materials.almohada} position={[-12.283, -3.624, -4.386]} rotation={[0, -0.506, 0]} scale={3.847} />
       <mesh geometry={nodes.handle006.geometry} material={materials['plateado.oscuro.2']} position={[31.889, -2.607, 0.367]} rotation={[1.574, 0.019, 1.56]} scale={0.231} />
       <mesh geometry={nodes.gem006.geometry} material={materials.esmeralda} position={[31.766, -2.597, 0.372]} rotation={[0, -1.56, 1.564]} scale={[0.162, 0.167, 0.134]} />
