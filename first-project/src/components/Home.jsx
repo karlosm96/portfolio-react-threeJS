@@ -29,9 +29,14 @@ export const useStateContext = () => useContext(StateContext);
 export default function Home(){
 
     const [progress, setProgress] = useState(0);
+    const [firstVisit, setFirstVisit] = useState(false);
     
     // Simulates data loading
     useEffect(() => {
+        const visitedBefore = localStorage.getItem('visitedBefore');
+
+        const time = visitedBefore ? 800 : 1500;
+
         const timer = setInterval(() => {
             setProgress(prevProgress => {
                 if (prevProgress < 100) {
@@ -40,7 +45,14 @@ export default function Home(){
                 clearInterval(timer);
                 return 100;
             });
-        }, 800);
+        }, time);
+
+        if(!visitedBefore){
+            localStorage.setItem('visitedBefore', true);
+            setFirstVisit(true);
+        }
+
+        return () => clearInterval(timer);
     }, []);
 
     return(
