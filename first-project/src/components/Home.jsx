@@ -35,7 +35,7 @@ export default function Home(){
     useEffect(() => {
         const visitedBefore = localStorage.getItem('visitedBefore');
 
-        const time = visitedBefore ? 800 : 2000;
+        const time = visitedBefore ? 1000: 2000;
 
         const timer = setInterval(() => {
             setProgress(prevProgress => {
