@@ -12,7 +12,7 @@ export default function Loader(props){
         className={ enterRoom ? 'courtainEffect' : '' }>
             <div id="loader-div">
                 <div id="progress-div" className={props.progress!= 100 ? '' : 'fadeOut'}> 
-                    <img id="loader-img" src="src/assets/img/brain.png" alt="" />
+                    <img id="loader-img" src="./src/assets/img/brain.png" alt="" />
                     <div id="bar-div">
                         <div id="progress" style={{width: `${props.progress}%`}} />
                         <p id="progress-p">{props.progress}%</p>
