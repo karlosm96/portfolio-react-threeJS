@@ -1,75 +1,47 @@
-import React, { useState, useEffect } from 'react';
 import { useStateContext } from './Home';
 import projectsInfo from '../assets/projectData/projects_info.json';
 
-export default function Projects(props) {
-    const { contextState, setContextState } = useStateContext();
-    const activationState = contextState['showProject'];
-    const projectInfo = activationState ? projectsInfo[contextState['projectName']] : null;
-    const [projectVideo, setProjectVideo] = useState(null);
-    const [projectImg, setProjectImg] = useState(null);
+export default function Projects(props){
 
-    useEffect(() => {
-        async function loadResources() {
-            if (projectInfo) {
-                try {
-                    const videoModule = await import(`../assets/videos/${projectInfo['video']}`);
-                    setProjectVideo(videoModule.default);
-                } catch (error) {
-                    console.error('Error loading video:', error);
-                }
+    const {contextState, setContextState} = useStateContext();
+    const activactionState = contextState['showProject'];
+    const projectInfo = activactionState ? projectsInfo[contextState['projectName']] : null;
 
-                try {
-                    const imgModule = await import(`../assets/img/${projectInfo['img']}`);
-                    setProjectImg(imgModule.default);
-                } catch (error) {
-                    console.error('Error loading image:', error);
-                }
-            }
-        }
-
-        loadResources();
-    }, [projectInfo]);
-
-    function closeProject() {
-        // Reiniciar variables de contexto
+    function closeProject(){
+        // Restart context variables
         setContextState({
-            ...contextState,
+            activationState: false,
+            showContact: false,
             showProject: false,
             projectName: ""
-        });
+          })
     }
 
-    function displayProject() {
-        return (
+    function displayProject(){
+        return(
             <section id="section-projects">
                 <div id="button-container-projects">
-                    <button id="button-close-projects" onClick={(e) => closeProject()}>
-                        <p id='button-p'></p>
-                    </button>
+                    <button id="button-close-projects" onClick={ (e) =>{ closeProject(); } }><p id='button-p'></p></button>
                 </div>
-                {projectInfo && projectInfo['video'] !== null ?
-                    <video id="project-video" src={projectVideo} controls></video> :
-                    <img id="project-img" src={projectImg} alt={projectInfo['name']}></img>
+                {projectInfo['video'] != null 
+                    ? <video id="project-video" src={`/videos/${projectInfo['video']}`} controls></video>
+                    : <img id="project-img" src={`/img/${projectInfo['img']}`}></img> 
                 }
                 <div id="description-container">
-                    <h1 id="project-name">{projectInfo && projectInfo['name']}</h1>
-                    <h4 id="project-url"><a id="link-project" href={projectInfo && projectInfo['url']} target="_blank" rel="noreferrer">
-                        <i className="fa-solid fa-link" style={{ color: "#ffffff" }}></i>
-                    </a></h4>
-                    <p id="project-description">{projectInfo && projectInfo['about']}</p>
+                    <h1 id="project-name">{projectInfo['name']}</h1>
+                    <h4 id="project-url"><a id="link-project" href={projectInfo['url']} target={"_blank"} rel="noreferrer"><i className="fa-solid fa-link" style={{color: "#ffffff"}}></i></a></h4>
+                    <p id="project-description">{projectInfo['about']}</p>
                 </div>
                 <div id="project-technologies">
-                    {projectInfo && projectInfo['skills'].map((element, index) => {
-                        const skillImg = `../assets/img/${element}`;
-                        return (
-                            <img key={index} className="skill-tech" src={skillImg} alt={element} />
-                        );
+                    {projectInfo['skills'].map((element, index) => {
+                    return(
+                        <img key={index} className="skill-tech" src={`/img/${element}`} alt="" /> 
+                      )
                     })}
                 </div>
             </section>
-        );
+        )
     }
 
-    return activationState ? displayProject() : null;
+    return activactionState ? displayProject() : null;
 }
