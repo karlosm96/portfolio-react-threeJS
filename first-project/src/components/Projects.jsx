@@ -6,8 +6,8 @@ export default function Projects(props){
     const {contextState, setContextState} = useStateContext();
     const activactionState = contextState['showProject'];
     const projectInfo = activactionState ? projectsInfo[contextState['projectName']] : null;
-    const projectVideo = import(`./assets/videos/${projectInfo['video']}`);
-    const projectImg = import(`./assets/img/${projectInfo['img']}`);
+    const projectVideo = require(`./assets/videos/${projectInfo['video']}`);
+    const projectImg = require(`./assets/img/${projectInfo['img']}`);
 
     function closeProject(){
         // Restart context variables
@@ -36,7 +36,7 @@ export default function Projects(props){
                 </div>
                 <div id="project-technologies">
                     {projectInfo['skills'].map((element, index) => {
-                    const skillImg = import(`../assets/img/${element}`);
+                    const skillImg = require(`../assets/img/${element}`);
                     return(
                         <img key={index} className="skill-tech" src={skillImg} alt="" /> 
                       )
