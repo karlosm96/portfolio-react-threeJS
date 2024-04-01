@@ -6,7 +6,7 @@ import { val } from '@theatre/core'
 import { useCurrentSheet } from '@theatre/r3f';
 import gsap from 'gsap';
 
-import GLtfDir from '../assets/models/poring.glb';
+import GLtfDir from '../../public/models/poring.glb';
 import Poster from "./Poster";
 
 export default function Poring(...props){

@@ -10,7 +10,7 @@ import { useStateContext } from "./Home.jsx";
 import Room from './Room.jsx';
 import Loader from "./Loader.jsx";
 import '../styles/home.css';
-import cameraMoveState from '../assets/projectData/camera_mov.json';
+import cameraMoveState from '../../public/projectData/camera_mov.json';
 
 export default function Scene(props){
     const sheet = getProject('preliminar name', { state: cameraMoveState }).sheet('Scene');

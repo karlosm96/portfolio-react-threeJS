@@ -5,7 +5,7 @@ import { useCurrentSheet } from '@theatre/r3f';
 import { val } from '@theatre/core'
 import { useFrame } from "@react-three/fiber";
 
-import GLtfDir from '../assets/models/poster.glb';
+import GLtfDir from '../../public/models/poster.glb';
 import gsap from 'gsap';
 
 export default function Poster(...props){

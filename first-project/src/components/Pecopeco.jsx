@@ -1,6 +1,6 @@
 import { useMemo } from "react"
 import { useGLTF } from "@react-three/drei";
-import GLtfDir from '../assets/models/sculpture_peco.glb';
+import GLtfDir from '../../public/models/sculpture_peco.glb';
 
 export default function Pecopeco(...props){
     const { nodes, materials } = useMemo(()=> {return useGLTF(GLtfDir)}); 

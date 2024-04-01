@@ -7,7 +7,7 @@ import { useScroll } from "@react-three/drei";
 import { val } from '@theatre/core'
 import gsap from 'gsap';
 
-import GLTF from '../assets/models/click_pointer.glb'
+import GLTF from '../../public/models/click_pointer.glb'
 
 export default function ClickPointer(props) {
   const { nodes, materials } = useMemo(() => { return useGLTF(GLTF); });

@@ -8,11 +8,11 @@ import { useCurrentSheet } from '@theatre/r3f';
 import { useStateContext } from "./Home.jsx";
 import gsap from 'gsap';
 
-import room from '../assets/models/room.glb'
+import room from '../../public/models/room.glb'
 import Book from "./Book.jsx";
 import Poring from "./Poring.jsx";
 import ClickPointer from "./ClickPointer.jsx";
-import PoringVid from '../assets/videos/poring.mp4';
+import PoringVid from '../../public/videos/poring.mp4';
 import Phone from "./Phone.jsx";
 import Pecopeco from "./Pecopeco.jsx";
 

@@ -1,5 +1,5 @@
 import { useStateContext } from './Home';
-import projectsInfo from '../assets/projectData/projects_info.json';
+import projectsInfo from '../../public/projectData/projects_info.json';
 
 export default function Projects(props){
 

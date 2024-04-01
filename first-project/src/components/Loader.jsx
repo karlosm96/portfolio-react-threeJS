@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import loaderImg from '../assets/img/brain.png';
+import loaderImg from '../../public/img/brain.png';
 
 export default function Loader(props){
     const [ enterRoom, setEnterRoom ] = useState(false);

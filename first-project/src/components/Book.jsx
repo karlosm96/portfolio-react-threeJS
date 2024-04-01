@@ -4,7 +4,7 @@ import { a } from '@react-spring/three';
 
 import {initialStatesAnimations, activateAnimation, resumePausedAnimation} from "../extra_functions/handleAnimations";
 import Hand from './Hand.jsx';
-import GLtfDir from '../assets/models/book_anim.glb';
+import GLtfDir from '../../public/models/book_anim.glb';
 
 export default function Book(...props){
     const bookRef = useRef();

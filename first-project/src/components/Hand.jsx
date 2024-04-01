@@ -7,7 +7,7 @@ import { useCurrentSheet } from '@theatre/r3f';
 import gsap from 'gsap';
 
 import HolographicMaterial from '../extra_functions/HolographicMaterial';
-import Hand from '../assets/models/hand.glb';
+import Hand from '../../public/models/hand.glb';
 
 
 export default function Model(props) {

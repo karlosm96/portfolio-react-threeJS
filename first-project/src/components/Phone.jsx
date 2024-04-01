@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { a } from '@react-spring/three'
 import { useGLTF } from '@react-three/drei';
 
-import GLTF from '../assets/models/phone.glb';
+import GLTF from '../../public/models/phone.glb';
 import { useStateContext } from './Home';
 
 export default function Phone(props){

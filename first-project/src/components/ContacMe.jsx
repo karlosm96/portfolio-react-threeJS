@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useStateContext } from "./Home";
 import axios from "axios";
-import contactMeImg from "../assets/img/contactMe.png";
+import contactMeImg from "../../public/img/contactMe.png";
 
 export default function ContactMe(){
     const {contextState, setContextState} = useStateContext();
