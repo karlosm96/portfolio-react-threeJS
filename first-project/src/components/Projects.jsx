@@ -6,6 +6,8 @@ export default function Projects(props){
     const {contextState, setContextState} = useStateContext();
     const activactionState = contextState['showProject'];
     const projectInfo = activactionState ? projectsInfo[contextState['projectName']] : null;
+    const projectVideo = import(`./assets/videos/${projectInfo['video']}`);
+    const projectImg = import(`./assets/img/${projectInfo['img']}`);
 
     function closeProject(){
         // Restart context variables
@@ -24,8 +26,8 @@ export default function Projects(props){
                     <button id="button-close-projects" onClick={ (e) =>{ closeProject(); } }><p id='button-p'></p></button>
                 </div>
                 {projectInfo['video'] != null 
-                    ? <video id="project-video" src={`./assets/videos/${projectInfo['video']}`} controls></video>
-                    : <img id="project-img" src={`./assets/img/${projectInfo['img']}`}></img> 
+                    ? <video id="project-video" src={projectVideo} controls></video>
+                    : <img id="project-img" src={projectImg}></img> 
                 }
                 <div id="description-container">
                     <h1 id="project-name">{projectInfo['name']}</h1>
@@ -34,8 +36,9 @@ export default function Projects(props){
                 </div>
                 <div id="project-technologies">
                     {projectInfo['skills'].map((element, index) => {
+                    const skillImg = import(`../assets/img/${element}`);
                     return(
-                        <img key={index} className="skill-tech" src={`./assets/img/${element}`} alt="" /> 
+                        <img key={index} className="skill-tech" src={skillImg} alt="" /> 
                       )
                     })}
                 </div>
