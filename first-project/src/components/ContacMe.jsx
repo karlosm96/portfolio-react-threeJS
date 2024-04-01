@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useStateContext } from "./Home";
 import axios from "axios";
+import contactMeImg from "../assets/img/contactMe.png";
 
 export default function ContactMe(){
     const {contextState, setContextState} = useStateContext();
@@ -134,7 +135,7 @@ export default function ContactMe(){
                     </form>
                 </div>
                 <div id="contact-image-container">
-                    <img id="img-contact" src="src/assets/img/contactMe.png" alt="" />
+                    <img id="img-contact" src={contactMeImg} alt="" />
                 </div>
             </section>
         )
