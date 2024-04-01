@@ -28,6 +28,7 @@ export default function Projects(props){
     function displayProject(){
         // Obtener el directorio raíz
         const rootDirectory = getRootDirectory();
+        console.log(rootDirectory);
         
         return (
             <section id="section-projects">
