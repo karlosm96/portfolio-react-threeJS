@@ -24,8 +24,8 @@ export default function Projects(props){
                     <button id="button-close-projects" onClick={ (e) =>{ closeProject(); } }><p id='button-p'></p></button>
                 </div>
                 {projectInfo['video'] != null 
-                    ? <video id="project-video" src={`assets/videos/${projectInfo['video']}`} controls></video>
-                    : <img id="project-img" src={`assets/img/${projectInfo['img']}`}></img> 
+                    ? <video id="project-video" src={`/assets/videos/${projectInfo['video']}`} controls></video>
+                    : <img id="project-img" src={`/assets/img/${projectInfo['img']}`}></img> 
                 }
                 <div id="description-container">
                     <h1 id="project-name">{projectInfo['name']}</h1>
@@ -35,7 +35,7 @@ export default function Projects(props){
                 <div id="project-technologies">
                     {projectInfo['skills'].map((element, index) => {
                     return(
-                        <img key={index} className="skill-tech" src={`assets/img/${element}`} alt="" /> 
+                        <img key={index} className="skill-tech" src={`/assets/img/${element}`} alt="" /> 
                       )
                     })}
                 </div>
