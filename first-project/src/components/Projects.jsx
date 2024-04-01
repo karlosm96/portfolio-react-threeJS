@@ -10,14 +10,25 @@ export default function Projects(props) {
     const [projectImg, setProjectImg] = useState(null);
 
     useEffect(() => {
-        if (projectInfo) {
-            import(`./assets/videos/${projectInfo['video']}`)
-                .then(module => setProjectVideo(module.default))
-                .catch(error => console.error('Error loading video:', error));
-            import(`./assets/img/${projectInfo['img']}`)
-                .then(module => setProjectImg(module.default))
-                .catch(error => console.error('Error loading image:', error));
+        async function loadResources() {
+            if (projectInfo) {
+                try {
+                    const videoModule = await import(`../assets/videos/${projectInfo['video']}`);
+                    setProjectVideo(videoModule.default);
+                } catch (error) {
+                    console.error('Error loading video:', error);
+                }
+
+                try {
+                    const imgModule = await import(`../assets/img/${projectInfo['img']}`);
+                    setProjectImg(imgModule.default);
+                } catch (error) {
+                    console.error('Error loading image:', error);
+                }
+            }
         }
+
+        loadResources();
     }, [projectInfo]);
 
     function closeProject() {
