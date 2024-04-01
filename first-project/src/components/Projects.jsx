@@ -8,7 +8,7 @@ export default function Projects(props){
     const projectInfo = activactionState ? projectsInfo[contextState['projectName']] : null;
 
     function closeProject(){
-        // Restart context variables
+        // Reiniciar variables de contexto
         setContextState({
             activationState: false,
             showContact: false,
@@ -17,15 +17,26 @@ export default function Projects(props){
           })
     }
 
+    function getRootDirectory() {
+        // Obtener la URL de Vercel
+        const vercelUrl = process.env.VERCEL_URL || '';
+        // Extraer el directorio raíz
+        const rootDirectory = vercelUrl.endsWith('/') ? vercelUrl : vercelUrl + '/';
+        return rootDirectory;
+    }
+
     function displayProject(){
-        return(
+        // Obtener el directorio raíz
+        const rootDirectory = getRootDirectory();
+        
+        return (
             <section id="section-projects">
                 <div id="button-container-projects">
-                    <button id="button-close-projects" onClick={ (e) =>{ closeProject(); } }><p id='button-p'></p></button>
+                    <button id="button-close-projects" onClick={closeProject}><p id='button-p'></p></button>
                 </div>
                 {projectInfo['video'] != null 
-                    ? <video id="project-video" src={`/videos/${projectInfo['video']}`} controls></video>
-                    : <img id="project-img" src={`/img/${projectInfo['img']}`}></img> 
+                    ? <video id="project-video" src={`${rootDirectory}videos/${projectInfo['video']}`} controls></video>
+                    : <img id="project-img" src={`${rootDirectory}img/${projectInfo['img']}`} alt="" /> 
                 }
                 <div id="description-container">
                     <h1 id="project-name">{projectInfo['name']}</h1>
@@ -35,7 +46,7 @@ export default function Projects(props){
                 <div id="project-technologies">
                     {projectInfo['skills'].map((element, index) => {
                     return(
-                        <img key={index} className="skill-tech" src={`/img/${element}`} alt="" /> 
+                        <img key={index} className="skill-tech" src={`${rootDirectory}img/${element}`} alt="" /> 
                       )
                     })}
                 </div>
