@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { a } from '@react-spring/three'
 import { useGLTF } from '@react-three/drei';
 import { useStateContext } from './Home';
+import { lazy } from 'react';
 
 const loadGLTF = () => import('../../public/models/phone.glb');
 const LazyPhoneModel = lazy(loadGLTF);
