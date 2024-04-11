@@ -50,7 +50,7 @@ export function Room( {scale, position} ) {
       )
   }, [])
 
-  const defaultPositionCards = {
+  const defaultPositionCards = useMemo(() =>({
     miDulceOnline : [-7.39, 14.587, -48.526],
     gameOfLife : [ -3.054, 14.587, -48.526],
     sortedProject : [ 1.311, 14.587, -48.526],
@@ -60,7 +60,7 @@ export function Room( {scale, position} ) {
     basePointerCardmiDulceOnline: [-7.371, 11.168, -48.539],
     basePointerCardgameOfLife: [-3.044, 11.168, -48.539],
     basePointerCardsortedProject: [1.161, 11.168, -48.539]
-  };
+  }), [])
 
   const [hovered, setHovered] = useState(false);
   const [cardName, setCardName ] = useState('');
@@ -1170,4 +1170,4 @@ function VideoMaterial({ url }) {
   return <meshBasicMaterial map={texture} toneMapped={false} />
 }
 
-export default Room;
+export default React.memo(Room);

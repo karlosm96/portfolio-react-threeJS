@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react';
 import { a } from '@react-spring/three'
 import { useGLTF } from '@react-three/drei';
-
-import GLTF from '../../public/models/phone.glb';
 import { useStateContext } from './Home';
 
+const loadGLTF = () => import('../../public/models/phone.glb');
+const LazyPhoneModel = lazy(loadGLTF);
+
 export default function Phone(props){
-    const { nodes, materials } = useGLTF(GLTF);
+    const { nodes, materials } = useGLTF(LazyPhoneModel);
     const {contextState, setContextState} = useStateContext();
 
     const defaultPositionApp = {
