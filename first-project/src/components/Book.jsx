@@ -71,7 +71,7 @@ export default function Book(...props){
                 </a.group>
                 <a.group name="parent006" position={[0.612, 0.039, -0.446]} rotation={[0, -0.142, 0]} scale={1.431}>
                 <a.group name="Empty006" position={[0, -0.004, 0]} rotation={[Math.PI / 2, 0, 0]} scale={0.255} />
-                <a.group name="Plane006" position={[0, -0.015, 0]} scale={[0.8, 1, 1]}>
+                <a.group name="Plane006" position={[0, -0.015, 0]} scale={[0.8, 1, 1]} r>
                     <mesh name="Plane022" geometry={nodes.Plane022.geometry} material={materials.presentation_1} />
                     <mesh name="Plane022_1" geometry={nodes.Plane022_1.geometry} material={materials['Material.001']} />
                 </a.group>
